@@ -117,38 +117,37 @@ export default function HomeScreen({ onNavigate }: NavProps) {
 
           {/* ── HERO / ONBOARDING SECTION ── */}
           <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "22px", boxShadow: T.s2, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
-            {/* Colour band — warm vintage collectible */}
-            <div style={{ background: "linear-gradient(140deg, #2C2416 0%, #3D3020 55%, #2A2318 100%)", padding: "18px 18px 16px", position: "relative", overflow: "hidden" }}>
-              {/* Parchment texture overlays */}
-              <div style={{ position: "absolute", top: "-20px", right: "-20px", width: "100px", height: "100px", borderRadius: "50%", background: "rgba(210,170,80,0.10)" }} />
-              <div style={{ position: "absolute", bottom: "-30px", right: "20px",  width: "70px",  height: "70px",  borderRadius: "50%", background: "rgba(255,235,160,0.07)" }} />
-              <div style={{ position: "absolute", top: "0", left: "0", right: "0", bottom: "0", background: "repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,235,160,0.02) 28px, rgba(255,235,160,0.02) 29px)", pointerEvents: "none" }} />
+            {/* Colour band — warm yellow collectible */}
+            <div style={{ background: "linear-gradient(135deg, #FFD740 0%, #FFE878 60%, #FFF5C0 100%)", padding: "18px 18px 16px", position: "relative", overflow: "hidden" }}>
+              {/* Soft decorative circles */}
+              <div style={{ position: "absolute", top: "-24px", right: "-18px", width: "90px", height: "90px", borderRadius: "50%", background: "rgba(255,255,255,0.35)" }} />
+              <div style={{ position: "absolute", bottom: "-28px", right: "24px", width: "64px", height: "64px", borderRadius: "50%", background: "rgba(28,35,64,0.04)" }} />
 
               {/* Tag badge row */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
-                <div style={{ display: "inline-block", background: T.yellow, color: "#2C2416", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px" }}>
+                <div style={{ display: "inline-block", background: T.navy, color: T.yellow, fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px" }}>
                   🇮🇳 India's First Collector Marketplace
                 </div>
                 <div
                   onClick={() => setInfoPage("about")}
-                  style={{ fontSize: "10px", fontWeight: 700, color: "rgba(255,215,64,0.75)", cursor: "pointer", fontFamily: "Nunito, sans-serif", textDecoration: "underline", textDecorationColor: "rgba(255,215,64,0.3)" }}
+                  style={{ fontSize: "10px", fontWeight: 700, color: T.navy, cursor: "pointer", fontFamily: "Nunito, sans-serif", opacity: 0.65, textDecoration: "underline" }}
                 >About RareNook</div>
               </div>
 
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: "#FFF8EC", lineHeight: 1.25, marginBottom: "7px" }}>
+              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy, lineHeight: 1.25, marginBottom: "7px" }}>
                 Buy, Sell &amp; Trade<br/>Cards Safely in India
               </div>
-              <div style={{ fontSize: "12px", color: "rgba(255,235,180,0.65)", lineHeight: 1.65, marginBottom: "14px" }}>
+              <div style={{ fontSize: "12px", color: "rgba(28,35,64,0.6)", lineHeight: 1.65, marginBottom: "14px" }}>
                 Real ₹ pricing · Escrow-protected trades · Verified collectors
               </div>
               <div style={{ display: "flex", gap: "8px" }}>
                 <div
                   onClick={() => onNavigate("Marketplace")}
-                  style={{ flex: 1, padding: "10px 0", background: T.yellow, borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: "#2C2416", textAlign: "center" as const, cursor: "pointer" }}
+                  style={{ flex: 1, padding: "10px 0", background: T.navy, borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", boxShadow: "2px 3px 0 rgba(28,35,64,0.2)" }}
                 >Browse Cards</div>
                 <div
                   onClick={() => setShowListing("sell")}
-                  style={{ flex: 1, padding: "10px 0", background: "rgba(255,248,236,0.10)", borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: "#FFF8EC", textAlign: "center" as const, cursor: "pointer", border: "1.5px solid rgba(255,248,236,0.22)" }}
+                  style={{ flex: 1, padding: "10px 0", background: "rgba(255,255,255,0.55)", borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.navy, textAlign: "center" as const, cursor: "pointer", border: "1.5px solid rgba(28,35,64,0.18)" }}
                 >Sell a Card</div>
               </div>
             </div>
