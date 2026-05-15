@@ -3,7 +3,8 @@
 import { useState } from "react";
 import {
   NavProps, T, condStyle,
-  Modal, StatusBar, PhoneShell, SectionHeader, BottomNav,
+  Modal, InfoModal, AddListingModal,
+  StatusBar, PhoneShell, SectionHeader, BottomNav,
 } from "./shared";
 
 // ─── DATA ─────────────────────────────────────────────────
@@ -44,11 +45,15 @@ const PROFILE_TABS = ["Listings", "Wishlist", "Activity", "Reviews"];
 // ─── MAIN SCREEN ──────────────────────────────────────────
 export default function ProfileScreen({ onNavigate }: NavProps) {
   const [activeTab, setActiveTab] = useState("Listings");
-  const [modal, setModal] = useState<{ title: string; message: string } | null>(null);
+  const [modal, setModal]         = useState<{ title: string; message: string } | null>(null);
+  const [infoPage, setInfoPage]   = useState<"about"|"help"|"contact"|null>(null);
+  const [showListing, setShowListing] = useState<"sell"|"trade"|null>(null);
 
   return (
     <>
-      {modal && <Modal title={modal.title} message={modal.message} onClose={() => setModal(null)} />}
+      {modal       && <Modal title={modal.title} message={modal.message} onClose={() => setModal(null)} />}
+      {infoPage    && <InfoModal page={infoPage} onClose={() => setInfoPage(null)} onSwitch={p => setInfoPage(p)} />}
+      {showListing && <AddListingModal mode={showListing} onClose={() => setShowListing(null)} />}
       <PhoneShell>
         <StatusBar />
 
@@ -56,7 +61,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
         <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
           <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy }}>My Profile</div>
           <div
-            onClick={() => setModal({ title: "Settings", message: "Profile settings, notification preferences, and account management are coming soon." })}
+            onClick={() => setInfoPage("about")}
             style={{ width: "34px", height: "34px", borderRadius: "50%", background: T.white, border: `1.5px solid ${T.border}`, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: T.s1 }}
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -152,10 +157,10 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                 </div>
               ))}
               <div
-                onClick={() => setModal({ title: "Add Listing", message: "List a new card for sale or trade. Full listing creation is coming in the next update!" })}
-                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px", transition: "border-color 0.15s" }}
-                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = T.navy}
-                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = T.inkGhost}
+                onClick={() => setShowListing("sell")}
+                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px", transition: "border-color 0.15s, color 0.15s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = T.navy; (e.currentTarget as HTMLElement).style.color = T.navy; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = T.inkGhost; (e.currentTarget as HTMLElement).style.color = T.inkSoft; }}
               >+ Add New Listing</div>
             </div>
           )}
@@ -180,6 +185,15 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                 onClick={() => setModal({ title: "Add to Wishlist", message: "Add a card you're looking for to your wishlist. RareNook will notify you when a match is found!" })}
                 style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px" }}
               >+ Add to Wishlist</div>
+
+              {/* Footer links */}
+              <div style={{ display: "flex", justifyContent: "center", gap: "6px", flexWrap: "wrap" as const, paddingBottom: "4px" }}>
+                {(["about","help","contact"] as const).map(p => (
+                  <div key={`prof-footer-${p}`} onClick={() => setInfoPage(p)} style={{ padding: "5px 13px", background: T.white, borderRadius: "50px", border: `1.5px solid ${T.border}`, fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer", boxShadow: T.s1, textTransform: "capitalize" as const }}>
+                    {p === "about" ? "About" : p === "help" ? "Help" : "Contact"}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

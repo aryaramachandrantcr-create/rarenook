@@ -1,9 +1,13 @@
 "use client";
 
 import {
-  NavProps, T,
+  NavProps, T, ALL_CARDS,
+  CardArt, ArtKey,
   StatusBar, PhoneShell, BottomNav,
 } from "./shared";
+
+// Use the first card's data for the demo
+const DEMO = ALL_CARDS[0];
 
 export default function CardDetailScreen({ onNavigate }: NavProps) {
   return (
@@ -44,9 +48,9 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
           >
             <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke={T.ink} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
-          <div style={{ width: "122px", height: "170px", background: T.white, borderRadius: "12px", boxShadow: T.s3, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "76px", border: `2px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
-            🃏
-            <div style={{ position: "absolute", inset: 0, borderRadius: "12px", background: "linear-gradient(135deg, rgba(255,255,255,0.35) 0%, transparent 55%)", pointerEvents: "none" }} />
+          <div style={{ width: "130px", height: "178px", background: DEMO.bg, borderRadius: "14px", boxShadow: T.s3, display: "flex", alignItems: "center", justifyContent: "center", border: `2px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
+            <CardArt artKey={DEMO.art as ArtKey} size={88} />
+            <div style={{ position: "absolute", inset: 0, borderRadius: "14px", background: "linear-gradient(135deg, rgba(255,255,255,0.35) 0%, transparent 55%)", pointerEvents: "none" }} />
           </div>
           <div
             style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", width: "30px", height: "30px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", boxShadow: T.s1, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
@@ -58,21 +62,24 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
         {/* Thumbnails */}
         <div style={{ display: "flex", gap: "7px", justifyContent: "center", padding: "10px 0 13px" }}>
           {[true, false, false, false].map((active, i) => (
-            <div key={i} style={{ width: "40px", height: "40px", borderRadius: "10px", background: active ? T.white : "rgba(255,255,255,0.7)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "20px", border: `1.5px solid ${active ? T.navy : "transparent"}`, boxShadow: active ? T.s1 : "none", cursor: "pointer" }}>🃏</div>
+            <div key={`cd-thumb-${i}`} style={{ width: "40px", height: "40px", borderRadius: "10px", background: active ? DEMO.bg : "rgba(255,255,255,0.7)", display: "flex", alignItems: "center", justifyContent: "center", border: `1.5px solid ${active ? T.navy : "transparent"}`, boxShadow: active ? T.s1 : "none", cursor: "pointer", overflow: "hidden" }}>
+              <CardArt artKey={DEMO.art as ArtKey} size={28} />
+            </div>
           ))}
         </div>
 
-        {/* Card info */}
+        {/* Card info — improved hierarchy */}
         <div style={{ padding: "0 16px 13px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "21px", fontWeight: 900, color: T.ink }}>Charizard ex SAR</div>
-          <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px", marginBottom: "10px", lineHeight: 1.5 }}>
-            Scarlet &amp; Violet 151 · #006/165 · Holo Rare · EN · 2023
+          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{DEMO.name}</div>
+          <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px", lineHeight: 1.6 }}>
+            {DEMO.series} · {DEMO.set} · {DEMO.lang} · {DEMO.year}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-            <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "28px", fontWeight: 900, color: T.ink }}>₹24,500</span>
-            <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>Near Mint</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", marginBottom: "4px" }}>
+            <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>{DEMO.cond}</span>
             <span style={{ fontSize: "12px", fontWeight: 700, color: T.mint }}>↑ 12%</span>
           </div>
+          <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, marginBottom: "3px" }}>Market Value</div>
+          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>{DEMO.price}</div>
         </div>
 
         {/* Market Intelligence */}

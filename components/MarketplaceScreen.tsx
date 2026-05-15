@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import {
-  Screen, NavProps, T, condStyle, ALL_CARDS,
-  Modal, StatusBar, PhoneShell, SectionHeader, SearchBar, BottomNav,
+  Screen, NavProps, T, condStyle, ALL_CARDS, ArtKey,
+  CardArt, Modal, StatusBar, PhoneShell, SectionHeader, SearchBar, BottomNav,
 } from "./shared";
 
-const CATEGORIES = ["All", "Pokémon", "One Piece", "Anime", "Graded"];
+const CATEGORIES = ["All", "TCG Cards", "One Piece", "Anime", "Graded"];
 
 // ─── FILTER TYPES ─────────────────────────────────────────
 type Filters = {
@@ -245,17 +245,18 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
                 }}
               >
                 {/* Image */}
-                <div style={{ height: "106px", background: card.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "52px", position: "relative" }}>
+                <div style={{ height: "106px", background: card.bg, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
                   <span style={{ position: "absolute", top: "7px", left: "9px", fontSize: "9px", fontWeight: 700, color: "rgba(28,35,64,0.3)", fontFamily: "Nunito, sans-serif" }}>{card.no}</span>
                   <div style={{ position: "absolute", top: "7px", right: "8px", width: "20px", height: "20px", borderRadius: "50%", background: card.bg, border: "1.5px solid rgba(0,0,0,0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "11px" }}>{card.type}</div>
-                  🃏
+                  <CardArt artKey={card.art as ArtKey} size={54} />
                 </div>
-                {/* Body */}
+                {/* Body — improved hierarchy */}
                 <div style={{ padding: "9px 10px 11px" }}>
                   <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.name}</div>
-                  <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px", marginBottom: "6px" }}>{card.set}</div>
+                  <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px", marginBottom: "5px" }}>{card.set} · {card.lang}</div>
+                  <div style={{ display: "inline-block", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 8px", borderRadius: "50px", border: "1.5px solid rgba(0,0,0,0.1)", ...condStyle[card.condType], marginBottom: "5px" }}>{card.cond}</div>
+                  <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase" as const }}>Market Value</div>
                   <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>{card.price}</div>
-                  <div style={{ display: "inline-block", marginTop: "5px", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 9px", borderRadius: "50px", border: "1.5px solid rgba(0,0,0,0.1)", ...condStyle[card.condType] }}>{card.cond}</div>
                 </div>
               </div>
             ))}

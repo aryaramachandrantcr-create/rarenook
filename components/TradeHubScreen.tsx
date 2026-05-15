@@ -4,6 +4,7 @@ import { useState } from "react";
 import {
   Screen, NavProps, T,
   StatusBar, PhoneShell, SectionHeader, SearchBar, BottomNav, LogoBall,
+  AddListingModal,
 } from "./shared";
 
 // ─── DATA ──────────────────────────────────────────────────────────────────────
@@ -469,6 +470,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
   const [activeTrade, setActiveTrade]     = useState<typeof ACTIVE_TRADES[0] | null>(null);
   const [seeAllModal, setSeeAllModal]     = useState<string | null>(null);
   const [notifyModal, setNotifyModal]     = useState<TabId | null>(null);
+  const [showListTrade, setShowListTrade] = useState(false);
 
   const tabs: TabId[] = ["Open Trades", "Wishlist Match", "Verified", "My Trades"];
 
@@ -492,6 +494,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
   return (
     <>
       {/* Overlays */}
+      {showListTrade && <AddListingModal mode="trade" onClose={() => setShowListTrade(false)} />}
       {demoMatch    && <MatchDemoOverlay    match={demoMatch}      onClose={() => setDemoMatch(null)}      />}
       {activeListing && <ListingOverlay     listing={activeListing} onClose={() => setActiveListing(null)} />}
       {activeTrade  && <TradeStatusOverlay  trade={activeTrade}     onClose={() => setActiveTrade(null)}   />}
@@ -533,7 +536,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
             </div>
           </div>
           <div
-            onClick={() => setSeeAllModal("List a Trade")}
+            onClick={() => setShowListTrade(true)}
             style={{ background: T.yellow, border: `2px solid ${T.navy}`, borderRadius: "9px", padding: "6px 12px", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.navy, boxShadow: `2px 2px 0 ${T.navy}`, cursor: "pointer" }}
           >+ List</div>
         </div>
