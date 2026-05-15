@@ -432,7 +432,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
         {/* Step indicator */}
         <div style={{ display: "flex", gap: "6px", marginBottom: "18px" }}>
           {(["details","pricing"] as ListingStep[]).map((s, i) => (
-            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px", background: step === s || (step === "success") ? T.navy : T.inkGhost, transition: "background 0.2s" }} />
+            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px", background: step === s ? T.navy : T.inkGhost, transition: "background 0.2s" }} />
           ))}
         </div>
 
