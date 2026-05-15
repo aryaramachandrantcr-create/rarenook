@@ -36,10 +36,11 @@ const PLATFORM_FEATURES = [
 // ─── MAIN SCREEN ──────────────────────────────────────────
 export default function HomeScreen({ onNavigate }: NavProps) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [modal, setModal]           = useState<{ title: string; message: string } | null>(null);
-  const [showNotifs, setShowNotifs] = useState(false);
-  const [infoPage, setInfoPage]     = useState<"about"|"help"|"contact"|null>(null);
+  const [modal, setModal]             = useState<{ title: string; message: string } | null>(null);
+  const [showNotifs, setShowNotifs]   = useState(false);
+  const [infoPage, setInfoPage]       = useState<"about"|"help"|"contact"|null>(null);
   const [showListing, setShowListing] = useState<"sell"|"trade"|null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(true);
 
   function handleCategoryClick(cat: CatConfig) {
     if (!cat.live) {
@@ -175,6 +176,36 @@ export default function HomeScreen({ onNavigate }: NavProps) {
               </div>
             ))}
           </div>
+
+          {/* ── "What is RareNook?" onboarding card ── */}
+          {showOnboarding && (
+            <div style={{ margin: "0 16px 14px", background: T.white, borderRadius: "18px", border: `1.5px solid ${T.border}`, boxShadow: T.s1, overflow: "hidden" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 14px 10px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <div style={{ width: "28px", height: "28px", borderRadius: "8px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>🃏</div>
+                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>New to RareNook?</div>
+                </div>
+                <div onClick={() => setShowOnboarding(false)} style={{ fontSize: "16px", color: T.inkGhost, cursor: "pointer", padding: "2px 4px", lineHeight: 1 }}>×</div>
+              </div>
+              <div style={{ padding: "0 14px 13px", display: "flex", flexDirection: "column" as const, gap: "8px" }}>
+                {[
+                  { icon: "🛍", text: "Browse & buy TCG cards at real Indian ₹ prices" },
+                  { icon: "⇄",  text: "Trade collector-to-collector safely across India" },
+                  { icon: "🔒", text: "Every transaction protected by RareNook Escrow" },
+                  { icon: "💬", text: "Join a community of verified Indian collectors" },
+                ].map((item, i) => (
+                  <div key={`ob-${i}`} style={{ display: "flex", alignItems: "center", gap: "9px" }}>
+                    <div style={{ width: "24px", height: "24px", borderRadius: "7px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", flexShrink: 0 }}>{item.icon}</div>
+                    <div style={{ fontSize: "11px", color: T.inkMid, lineHeight: 1.45 }}>{item.text}</div>
+                  </div>
+                ))}
+                <div
+                  onClick={() => { setInfoPage("about"); setShowOnboarding(false); }}
+                  style={{ marginTop: "4px", fontSize: "11px", fontWeight: 700, color: T.lavender, cursor: "pointer" }}
+                >Learn more about RareNook →</div>
+              </div>
+            </div>
+          )}
 
           {/* ── Category chips ── */}
           <div style={{ display: "flex", gap: "7px", padding: "0 16px 15px", overflowX: "auto" }}>

@@ -86,28 +86,28 @@ export const CARD_ART: Record<string, React.ReactNode> = {
 // ─── CARD ART KEY MAP ─────────────────────────────────────
 export type ArtKey = keyof typeof CARD_ART;
 
-// ─── ALL CARDS DATA — improved info hierarchy ─────────────
+// ─── ALL CARDS DATA ──────────────────────────────────────
 export const ALL_CARDS = [
-  { id: 1,  no: "006", name: "Emberveil Dragon",    series: "Scarlet & Violet",  set: "SV151",           cond: "PSA 10",    condType: "psa" as const, lang: "EN", year: "2023", price: "₹24,500",   marketLabel: "Market Value", bg: "#FFF0ED", art: "fire"    as ArtKey, category: "cards",    real: true  },
-  { id: 2,  no: "150", name: "Voidmind Ancient",     series: "Scarlet & Violet",  set: "SV151",           cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹5,800",    marketLabel: "Market Value", bg: "#F3F1FF", art: "psychic" as ArtKey, category: "cards",    real: true  },
-  { id: 3,  no: "025", name: "Stormtail Sprite",     series: "Fusion Strike",     set: "FS-EN",           cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹2,100",    marketLabel: "Market Value", bg: "#FFF5C0", art: "electric" as ArtKey, category: "cards",    real: true  },
-  { id: 4,  no: "197", name: "Shadowmantle Beast",   series: "Evolving Skies",    set: "EVS",             cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹8,500",    marketLabel: "Market Value", bg: "#EDFBF4", art: "moon"    as ArtKey, category: "cards",    real: false },
-  { id: 5,  no: "009", name: "Tidecrest Leviathan",  series: "Scarlet & Violet",  set: "SV151",           cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹3,200",    marketLabel: "Market Value", bg: "#E4F4FB", art: "water"   as ArtKey, category: "cards",    real: false },
-  { id: 6,  no: "006", name: "Emberveil Dragon 1st", series: "Base Set",          set: "BST",             cond: "PSA 9",     condType: "psa" as const, lang: "EN", year: "1999", price: "₹1,24,000", marketLabel: "Market Value", bg: "#FFF0ED", art: "star"    as ArtKey, category: "cards",    real: false },
-  { id: 7,  no: "OP1", name: "Wavecrest Captain R",  series: "One Piece TCG",     set: "OP-06",           cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2024", price: "₹3,400",    marketLabel: "Market Value", bg: "#E4F4FB", art: "fist"    as ArtKey, category: "onepiece", real: false },
-  { id: 8,  no: "OP2", name: "Bladestorm Hero Alt",  series: "One Piece TCG",     set: "OP-01",           cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2022", price: "₹2,900",    marketLabel: "Market Value", bg: "#EDFBF4", art: "sword"   as ArtKey, category: "onepiece", real: false },
+  { id: 1,  no: "006", name: "Charizard ex SAR",     series: "Scarlet & Violet",  set: "SV151",   cond: "PSA 10",    condType: "psa" as const, lang: "EN", year: "2023", price: "₹24,500",   marketLabel: "Market Value", bg: "#FFF0ED", art: "fire"     as ArtKey, category: "cards",    real: true  },
+  { id: 2,  no: "150", name: "Mewtwo ex SAR",         series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹5,800",    marketLabel: "Market Value", bg: "#F3F1FF", art: "psychic"  as ArtKey, category: "cards",    real: true  },
+  { id: 3,  no: "025", name: "Pikachu V Alt Art",     series: "Fusion Strike",     set: "FS-EN",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹2,100",    marketLabel: "Market Value", bg: "#FFF5C0", art: "electric" as ArtKey, category: "cards",    real: true  },
+  { id: 4,  no: "197", name: "Umbreon VMAX Alt Art",  series: "Evolving Skies",    set: "EVS",     cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹8,500",    marketLabel: "Market Value", bg: "#EDFBF4", art: "moon"     as ArtKey, category: "cards",    real: false },
+  { id: 5,  no: "009", name: "Blastoise ex SAR",      series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹3,200",    marketLabel: "Market Value", bg: "#E4F4FB", art: "water"    as ArtKey, category: "cards",    real: false },
+  { id: 6,  no: "006", name: "Charizard Base 1st Ed", series: "Base Set",          set: "BST-EN",  cond: "PSA 9",     condType: "psa" as const, lang: "EN", year: "1999", price: "₹1,24,000", marketLabel: "Market Value", bg: "#FFF0ED", art: "star"     as ArtKey, category: "cards",    real: false },
+  { id: 7,  no: "OP1", name: "Luffy Gear 5 R",        series: "One Piece TCG",     set: "OP-06",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2024", price: "₹3,400",    marketLabel: "Market Value", bg: "#E4F4FB", art: "fist"     as ArtKey, category: "onepiece", real: false },
+  { id: 8,  no: "OP2", name: "Zoro Alt Art R",        series: "One Piece TCG",     set: "OP-01",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2022", price: "₹2,900",    marketLabel: "Market Value", bg: "#EDFBF4", art: "sword"    as ArtKey, category: "onepiece", real: false },
 ];
 
 export const MOVERS = [
-  { id: 7,  name: "Wavecrest Captain R",   price: "₹3,400", change: "↑ 24%", up: true,  bg: "#E4F4FB", art: "fist"    as ArtKey, category: "onepiece" },
-  { id: 8,  name: "Bladestorm Hero Alt",   price: "₹2,900", change: "↑ 9%",  up: true,  bg: "#F3F1FF", art: "sword"   as ArtKey, category: "onepiece" },
-  { id: 4,  name: "Shadowmantle Beast",    price: "₹8,500", change: "↑ 6%",  up: true,  bg: "#EDFBF4", art: "moon"    as ArtKey, category: "cards"    },
+  { id: 7,  name: "Luffy Gear 5 R",        price: "₹3,400", change: "↑ 24%", up: true,  bg: "#E4F4FB", art: "fist"     as ArtKey, category: "onepiece" },
+  { id: 8,  name: "Zoro Alt Art R",         price: "₹2,900", change: "↑ 9%",  up: true,  bg: "#EDFBF4", art: "sword"    as ArtKey, category: "onepiece" },
+  { id: 4,  name: "Umbreon VMAX Alt Art",   price: "₹8,500", change: "↑ 6%",  up: true,  bg: "#EDFBF4", art: "moon"     as ArtKey, category: "cards"    },
 ];
 
 export const SALES = [
-  { name: "Stormtail Sprite · NM · EN",     by: "CardKing_BLR · 2h ago",  price: "₹2,100", dot: "#E8402A" },
-  { name: "Wavecrest Captain R · NM · JP",  by: "PokeFan_MUM · 5h ago",   price: "₹1,800", dot: "#9DD0EA" },
-  { name: "Shadowmantle Beast · NM · EN",   by: "TCG_Kerala · 8h ago",    price: "₹8,500", dot: "#6B5AC4" },
+  { name: "Pikachu V Alt Art · NM · EN",    by: "CardKing_BLR · 2h ago",  price: "₹2,100", dot: "#E8402A" },
+  { name: "Luffy Gear 5 R · NM · JP",       by: "PokeFan_MUM · 5h ago",   price: "₹1,800", dot: "#9DD0EA" },
+  { name: "Umbreon VMAX Alt Art · NM · EN", by: "TCG_Kerala · 8h ago",    price: "₹8,500", dot: "#6B5AC4" },
 ];
 
 // ─── DESIGN TOKENS ────────────────────────────────────────

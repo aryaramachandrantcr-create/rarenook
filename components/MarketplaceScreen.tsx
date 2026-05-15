@@ -147,9 +147,11 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
   // Count active filters
   const activeFilterCount = Object.values(appliedFilters).filter(v => v !== "Any").length;
 
-  const displayCards = activeCat === "All" || activeCat === "Pokémon"
-    ? ALL_CARDS.filter(c => c.category === "pokemon")
-    : [];
+  const displayCards = (activeCat === "All" || activeCat === "TCG Cards")
+    ? ALL_CARDS.filter(c => c.category === "cards")
+    : activeCat === "One Piece"
+    ? ALL_CARDS.filter(c => c.category === "onepiece")
+    : ALL_CARDS.filter(c => c.category === "cards");
 
   return (
     <>
