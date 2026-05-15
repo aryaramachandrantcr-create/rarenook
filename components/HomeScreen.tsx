@@ -128,11 +128,11 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                 <div style={{ display: "inline-block", background: T.navy, color: T.yellow, fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px" }}>
                   🇮🇳 India's First Collector Marketplace
                 </div>
-                <div
-                  onClick={() => setInfoPage("about")}
-                  style={{ fontSize: "10px", fontWeight: 700, color: T.navy, cursor: "pointer", fontFamily: "Nunito, sans-serif", opacity: 0.65, textDecoration: "underline" }}
-                >About RareNook</div>
               </div>
+              <div
+                onClick={() => setInfoPage("about")}
+                style={{ fontSize: "10px", fontWeight: 700, color: T.navy, cursor: "pointer", fontFamily: "Nunito, sans-serif", opacity: 0.55, textDecoration: "underline", marginBottom: "10px" }}
+              >About RareNook</div>
 
               <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy, lineHeight: 1.25, marginBottom: "7px" }}>
                 Buy, Sell &amp; Trade<br/>Cards Safely in India
