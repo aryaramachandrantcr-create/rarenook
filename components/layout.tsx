@@ -6,14 +6,11 @@ export const metadata: Metadata = {
   description: "Buy, sell and trade Pokémon, One Piece & Anime cards safely in India",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ margin: 0, padding: 0, background: "#C9E9F7" }}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -21,7 +18,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body style={{ margin: 0, padding: 0, width: "100%", overflowX: "hidden", background: "#C9E9F7" }}>
+      <body style={{ margin: 0, padding: 0, width: "100%", minHeight: "100vh", overflowX: "hidden", background: "#C9E9F7" }}>
         {children}
       </body>
     </html>

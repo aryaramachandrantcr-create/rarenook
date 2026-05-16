@@ -692,15 +692,15 @@ export function IconPokeCategory({ size = 36 }: { size?: number }) {
   );
 }
 
-// ─── PHONE SHELL — full-screen on mobile, no centering ───
+// ─── PHONE SHELL — truly full-screen, zero gaps ───────────
 export function PhoneShell({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      width: "100%",
+      width: "100vw",
       minHeight: "100vh",
       background: T.sky,
-      position: "relative",
       overflowX: "hidden",
+      position: "relative",
     }}>
       {children}
     </div>

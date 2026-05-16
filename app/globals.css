@@ -6,34 +6,23 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-body {
-  width: 100%;
   min-height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow-x: hidden;
   background: #C9E9F7;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Next.js root div â€” must also be full width */
-#__next {
+/* Next.js root */
+#__next, main {
   width: 100%;
   min-height: 100vh;
-}
-
-/* No horizontal scroll anywhere */
-main {
-  width: 100%;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }

@@ -31,18 +31,17 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // ── DESKTOP: full-width, no shell ─────────────────────────
   if (isDesktop) {
     return <DesktopLayout screen={screen} onNavigate={handleNavigate} />;
   }
 
-  // ── MOBILE: full-screen, no grey padding, no phone shell ──
+  // Mobile — truly full bleed, no wrapper padding
   return (
-    <main style={{
+    <div style={{
+      position: "relative",
+      width: "100vw",
       minHeight: "100vh",
-      background: "#C9E9F7",  /* sky — same as PhoneShell bg */
-      width: "100%",
-      maxWidth: "100vw",
+      background: "#C9E9F7",
       overflowX: "hidden",
     }}>
       {screen === "Home"        && <HomeScreen        onNavigate={handleNavigate} />}
@@ -52,6 +51,6 @@ export default function Home() {
       {screen === "TradeOffer"  && <TradeOfferScreen    onNavigate={handleNavigate} />}
       {screen === "Community"   && <CommunityScreen     onNavigate={handleNavigate} />}
       {screen === "Profile"     && <ProfileScreen       onNavigate={handleNavigate} />}
-    </main>
+    </div>
   );
 }
