@@ -456,7 +456,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
         {/* Step indicator */}
         <div style={{ display: "flex", gap: "6px", marginBottom: "18px" }}>
           {(["details","pricing"] as ListingStep[]).map((s, i) => (
-            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px",background: step === s ? T.navy : T.inkGhost , transition: "background 0.2s" }} />
+            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px", background: step === s ? T.navy : T.inkGhost, transition: "background 0.2s" }} />
           ))}
         </div>
 
@@ -692,29 +692,18 @@ export function IconPokeCategory({ size = 36 }: { size?: number }) {
   );
 }
 
-// ─── PHONE SHELL ──────────────────────────────────────────
-// On mobile: full-screen. On desktop (when used in preview): 345px shell.
+// ─── PHONE SHELL — full-screen on mobile, no centering ───
 export function PhoneShell({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <style>{`
-        .rn-shell {
-          width: 100%;
-          max-width: 100%;
-          background: #C9E9F7;
-          border-radius: 0;
-          overflow-x: hidden;
-          position: relative;
-          min-height: 100vh;
-          box-shadow: none;
-        }
-        .rn-scroll {
-          max-height: none !important;
-          overflow-y: visible !important;
-        }
-      `}</style>
-      <div className="rn-shell">{children}</div>
-    </>
+    <div style={{
+      width: "100%",
+      minHeight: "100vh",
+      background: T.sky,
+      position: "relative",
+      overflowX: "hidden",
+    }}>
+      {children}
+    </div>
   );
 }
 
