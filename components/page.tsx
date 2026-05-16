@@ -11,17 +11,14 @@ import ProfileScreen     from "@/components/ProfileScreen";
 import DesktopLayout     from "@/components/DesktopLayout";
 import { Screen } from "@/components/shared";
 
-// ─── RESPONSIVE HOOK ──────────────────────────────────────
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
-
   useEffect(() => {
     const check = () => setIsDesktop(window.innerWidth >= 768);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
-
   return isDesktop;
 }
 
@@ -34,20 +31,19 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // ── DESKTOP ───────────────────────────────────────────────
+  // ── DESKTOP: full-width, no shell ─────────────────────────
   if (isDesktop) {
     return <DesktopLayout screen={screen} onNavigate={handleNavigate} />;
   }
 
-  // ── MOBILE — phone shell, exactly as before ───────────────
+  // ── MOBILE: full-screen, no grey padding, no phone shell ──
   return (
     <main style={{
       minHeight: "100vh",
-      background: "#D8E4EE",
-      display: "flex",
-      alignItems: "flex-start",
-      justifyContent: "center",
-      padding: "2.5rem 2rem",
+      background: "#C9E9F7",  /* sky — same as PhoneShell bg */
+      width: "100%",
+      maxWidth: "100vw",
+      overflowX: "hidden",
     }}>
       {screen === "Home"        && <HomeScreen        onNavigate={handleNavigate} />}
       {screen === "Marketplace" && <MarketplaceScreen  onNavigate={handleNavigate} />}

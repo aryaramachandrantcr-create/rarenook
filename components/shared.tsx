@@ -65,6 +65,30 @@ export const CARD_ART: Record<string, React.ReactNode> = {
       <circle cx="39" cy="22" r="1.5" fill="#FFD740" opacity="0.7"/>
     </svg>
   ),
+  // Pokéball-inspired placeholder (red top, white bottom, stripe, center button)
+  pokeball: (
+    <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+      <circle cx="27" cy="27" r="25" fill="#E8402A" stroke="#1A1C2E" strokeWidth="2"/>
+      <path d="M2.2 27 A24.8 24.8 0 0 0 51.8 27 Z" fill="white"/>
+      <rect x="2" y="25" width="50" height="4" fill="#1A1C2E"/>
+      <circle cx="27" cy="27" r="6" fill="white" stroke="#1A1C2E" strokeWidth="2.5"/>
+      <circle cx="27" cy="27" r="2.5" fill="#1A1C2E"/>
+    </svg>
+  ),
+  // Straw hat-inspired placeholder (hat brim + crown silhouette)
+  strawhat: (
+    <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+      <circle cx="27" cy="27" r="25" fill="#FFF5C0" stroke="#C4960A" strokeWidth="1.5"/>
+      {/* Hat brim */}
+      <ellipse cx="27" cy="32" rx="18" ry="4.5" fill="#FFD740" stroke="#C4960A" strokeWidth="1.5"/>
+      {/* Hat crown */}
+      <path d="M16 32 C16 32 17 20 27 20 C37 20 38 32 38 32Z" fill="#FFD740" stroke="#C4960A" strokeWidth="1.5"/>
+      {/* Red band */}
+      <path d="M17 28.5 C17 28.5 20 30 27 30 C34 30 37 28.5 37 28.5" stroke="#E8402A" strokeWidth="3" strokeLinecap="round"/>
+      {/* Crown lines (texture) */}
+      <path d="M22 24 C22 24 24 22 27 22 C30 22 32 24 32 24" stroke="#C4960A" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
+    </svg>
+  ),
   fist: (
     <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
       <circle cx="27" cy="27" r="26" fill="#E4F4FB"/>
@@ -88,20 +112,20 @@ export type ArtKey = keyof typeof CARD_ART;
 
 // ─── ALL CARDS DATA ──────────────────────────────────────
 export const ALL_CARDS = [
-  { id: 1,  no: "006", name: "Charizard ex SAR",     series: "Scarlet & Violet",  set: "SV151",   cond: "PSA 10",    condType: "psa" as const, lang: "EN", year: "2023", price: "₹24,500",   marketLabel: "Market Value", bg: "#FFF0ED", art: "fire"     as ArtKey, category: "cards",    real: true  },
-  { id: 2,  no: "150", name: "Mewtwo ex SAR",         series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹5,800",    marketLabel: "Market Value", bg: "#F3F1FF", art: "psychic"  as ArtKey, category: "cards",    real: true  },
-  { id: 3,  no: "025", name: "Pikachu V Alt Art",     series: "Fusion Strike",     set: "FS-EN",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹2,100",    marketLabel: "Market Value", bg: "#FFF5C0", art: "electric" as ArtKey, category: "cards",    real: true  },
-  { id: 4,  no: "197", name: "Umbreon VMAX Alt Art",  series: "Evolving Skies",    set: "EVS",     cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹8,500",    marketLabel: "Market Value", bg: "#EDFBF4", art: "moon"     as ArtKey, category: "cards",    real: false },
-  { id: 5,  no: "009", name: "Blastoise ex SAR",      series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹3,200",    marketLabel: "Market Value", bg: "#E4F4FB", art: "water"    as ArtKey, category: "cards",    real: false },
-  { id: 6,  no: "006", name: "Charizard Base 1st Ed", series: "Base Set",          set: "BST-EN",  cond: "PSA 9",     condType: "psa" as const, lang: "EN", year: "1999", price: "₹1,24,000", marketLabel: "Market Value", bg: "#FFF0ED", art: "star"     as ArtKey, category: "cards",    real: false },
-  { id: 7,  no: "OP1", name: "Luffy Gear 5 R",        series: "One Piece TCG",     set: "OP-06",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2024", price: "₹3,400",    marketLabel: "Market Value", bg: "#E4F4FB", art: "fist"     as ArtKey, category: "onepiece", real: false },
-  { id: 8,  no: "OP2", name: "Zoro Alt Art R",        series: "One Piece TCG",     set: "OP-01",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2022", price: "₹2,900",    marketLabel: "Market Value", bg: "#EDFBF4", art: "sword"    as ArtKey, category: "onepiece", real: false },
+  { id: 1,  no: "006", name: "Charizard ex SAR",     series: "Scarlet & Violet",  set: "SV151",   cond: "PSA 10",    condType: "psa" as const, lang: "EN", year: "2023", price: "₹24,500",   marketLabel: "Market Value", bg: "#FFF0ED", art: "pokeball"  as ArtKey, category: "cards",    real: true  },
+  { id: 2,  no: "150", name: "Mewtwo ex SAR",         series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹5,800",    marketLabel: "Market Value", bg: "#F3F1FF", art: "pokeball"  as ArtKey, category: "cards",    real: true  },
+  { id: 3,  no: "025", name: "Pikachu V Alt Art",     series: "Fusion Strike",     set: "FS-EN",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹2,100",    marketLabel: "Market Value", bg: "#FFF5C0", art: "pokeball"  as ArtKey, category: "cards",    real: true  },
+  { id: 4,  no: "197", name: "Umbreon VMAX Alt Art",  series: "Evolving Skies",    set: "EVS",     cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2021", price: "₹8,500",    marketLabel: "Market Value", bg: "#EDFBF4", art: "pokeball"  as ArtKey, category: "cards",    real: false },
+  { id: 5,  no: "009", name: "Blastoise ex SAR",      series: "Scarlet & Violet",  set: "SV151",   cond: "Near Mint", condType: "nm"  as const, lang: "EN", year: "2023", price: "₹3,200",    marketLabel: "Market Value", bg: "#E4F4FB", art: "pokeball"  as ArtKey, category: "cards",    real: false },
+  { id: 6,  no: "006", name: "Charizard Base 1st Ed", series: "Base Set",          set: "BST-EN",  cond: "PSA 9",     condType: "psa" as const, lang: "EN", year: "1999", price: "₹1,24,000", marketLabel: "Market Value", bg: "#FFF0ED", art: "pokeball"  as ArtKey, category: "cards",    real: false },
+  { id: 7,  no: "OP1", name: "Luffy Gear 5 R",        series: "One Piece TCG",     set: "OP-06",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2024", price: "₹3,400",    marketLabel: "Market Value", bg: "#FFF5C0", art: "strawhat"  as ArtKey, category: "onepiece", real: false },
+  { id: 8,  no: "OP2", name: "Zoro Alt Art R",        series: "One Piece TCG",     set: "OP-01",   cond: "Near Mint", condType: "nm"  as const, lang: "JP", year: "2022", price: "₹2,900",    marketLabel: "Market Value", bg: "#FFF5C0", art: "strawhat"  as ArtKey, category: "onepiece", real: false },
 ];
 
 export const MOVERS = [
-  { id: 7,  name: "Luffy Gear 5 R",        price: "₹3,400", change: "↑ 24%", up: true,  bg: "#E4F4FB", art: "fist"     as ArtKey, category: "onepiece" },
-  { id: 8,  name: "Zoro Alt Art R",         price: "₹2,900", change: "↑ 9%",  up: true,  bg: "#EDFBF4", art: "sword"    as ArtKey, category: "onepiece" },
-  { id: 4,  name: "Umbreon VMAX Alt Art",   price: "₹8,500", change: "↑ 6%",  up: true,  bg: "#EDFBF4", art: "moon"     as ArtKey, category: "cards"    },
+  { id: 7,  name: "Luffy Gear 5 R",        price: "₹3,400", change: "↑ 24%", up: true,  bg: "#FFF5C0", art: "strawhat"  as ArtKey, category: "onepiece" },
+  { id: 8,  name: "Zoro Alt Art R",         price: "₹2,900", change: "↑ 9%",  up: true,  bg: "#FFF5C0", art: "strawhat"  as ArtKey, category: "onepiece" },
+  { id: 4,  name: "Umbreon VMAX Alt Art",   price: "₹8,500", change: "↑ 6%",  up: true,  bg: "#EDFBF4", art: "pokeball"  as ArtKey, category: "cards"    },
 ];
 
 export const SALES = [
@@ -156,13 +180,13 @@ export function CardInfoBlock({ card, showPrice = true }: {
 }) {
   return (
     <div>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, lineHeight: 1.25 }}>{card.name}</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, lineHeight: 1.25 }}>{card.name}</div>
       <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px", lineHeight: 1.4 }}>
         {card.set} · {card.lang} · {card.year}
       </div>
       <div style={{ marginTop: "4px" }}>
         <span style={{
-          display: "inline-block", fontFamily: "Nunito, sans-serif",
+          display: "inline-block", fontFamily: "'Space Grotesk', sans-serif",
           fontSize: "10px", fontWeight: 800,
           padding: "2px 8px", borderRadius: "50px",
           border: "1px solid rgba(0,0,0,0.08)",
@@ -172,7 +196,7 @@ export function CardInfoBlock({ card, showPrice = true }: {
       {showPrice && (
         <div style={{ marginTop: "5px" }}>
           <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase" as const }}>{card.marketLabel}</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.price}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.price}</div>
         </div>
       )}
     </div>
@@ -197,9 +221,9 @@ export function Modal({ title, message, onClose }: {
         <div style={{ fontSize: "40px", marginBottom: "14px" }}>
           {title.includes("soon") || title.includes("Soon") ? "🚧" : title.includes("listed") ? "📋" : "ℹ️"}
         </div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>{title}</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>{title}</div>
         <div style={{ fontSize: "13px", color: T.inkSoft, lineHeight: 1.6, marginBottom: "22px" }}>{message}</div>
-        <button onClick={onClose} style={{ background: T.navy, color: T.yellow, fontFamily: "Nunito, sans-serif", fontWeight: 800, fontSize: "14px", padding: "12px 32px", borderRadius: "14px", border: "none", cursor: "pointer", width: "100%" }}>
+        <button onClick={onClose} style={{ background: T.navy, color: T.yellow, fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: "14px", padding: "12px 32px", borderRadius: "14px", border: "none", cursor: "pointer", width: "100%" }}>
           Got it
         </button>
       </div>
@@ -235,7 +259,7 @@ export function NotificationsModal({ onClose }: { onClose: () => void }) {
       <div style={{ padding: "16px 20px 0" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
           <div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Notifications</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Notifications</div>
             {unread > 0 && <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "2px" }}>{unread} unread</div>}
           </div>
           <div onClick={onClose} style={{ width: "28px", height: "28px", borderRadius: "50%", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
@@ -248,7 +272,7 @@ export function NotificationsModal({ onClose }: { onClose: () => void }) {
             {!n.read && <div style={{ position: "absolute", top: "13px", right: 0, width: "7px", height: "7px", borderRadius: "50%", background: T.coral }} />}
             <div style={{ width: "36px", height: "36px", borderRadius: "11px", background: n.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "17px", flexShrink: 0 }}>{n.icon}</div>
             <div style={{ flex: 1, paddingRight: "14px" }}>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: n.read ? 600 : 800, color: T.ink }}>{n.title}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: n.read ? 600 : 800, color: T.ink }}>{n.title}</div>
               <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "2px", lineHeight: 1.5 }}>{n.sub}</div>
               <div style={{ fontSize: "10px", color: T.inkGhost, marginTop: "3px" }}>{n.time}</div>
             </div>
@@ -270,7 +294,7 @@ function AboutContent() {
   return (
     <>
       <div style={{ fontSize: "40px", textAlign: "center" as const, marginBottom: "12px" }}>🃏</div>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "10px" }}>About RareNook</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "10px" }}>About RareNook</div>
       <div style={{ fontSize: "12px", color: T.inkMid, lineHeight: 1.75, marginBottom: "14px" }}>
         RareNook is India's first dedicated trading card marketplace — built for serious collectors who want to buy, sell, and trade safely.
       </div>
@@ -284,7 +308,7 @@ function AboutContent() {
         <div key={`about-${i}`} style={{ display: "flex", gap: "12px", padding: "10px 0", borderTop: `1px solid rgba(28,35,64,0.06)` }}>
           <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}>{f.icon}</div>
           <div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
             <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "2px", lineHeight: 1.5 }}>{f.sub}</div>
           </div>
         </div>
@@ -306,10 +330,10 @@ function HelpContent() {
   ];
   return (
     <>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>Help & Support</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>Help & Support</div>
       {faqs.map((f, i) => (
         <div key={`faq-${i}`} style={{ padding: "12px 0", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "5px" }}>{f.q}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "5px" }}>{f.q}</div>
           <div style={{ fontSize: "11px", color: T.inkMid, lineHeight: 1.65 }}>{f.a}</div>
         </div>
       ))}
@@ -323,7 +347,7 @@ function HelpContent() {
 function ContactContent() {
   return (
     <>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>Contact Us</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>Contact Us</div>
       {[
         { icon: "📧", label: "Support Email",   value: "support@rarenook.in",       sub: "Response within 24 hours"    },
         { icon: "💬", label: "Live Chat",        value: "In-app chat support",       sub: "Available on all trade screens" },
@@ -333,7 +357,7 @@ function ContactContent() {
         <div key={`contact-${i}`} style={{ display: "flex", gap: "12px", padding: "11px 0", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
           <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}>{c.icon}</div>
           <div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{c.label}</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{c.label}</div>
             <div style={{ fontSize: "12px", color: T.navy, fontWeight: 700, marginTop: "2px" }}>{c.value}</div>
             <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "1px" }}>{c.sub}</div>
           </div>
@@ -360,7 +384,7 @@ export function InfoModal({ page, onClose, onSwitch }: {
         {/* Tab switcher */}
         <div style={{ display: "flex", gap: "0", background: T.skySoft, borderRadius: "12px", padding: "3px", marginBottom: "18px", overflow: "hidden" }}>
           {tabs.map(t => (
-            <div key={`info-tab-${t}`} onClick={() => onSwitch(t)} style={{ flex: 1, padding: "8px 0", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: page === t ? 800 : 500, color: page === t ? T.ink : T.inkSoft, background: page === t ? T.white : "transparent", borderRadius: "9px", cursor: "pointer", transition: "all 0.15s", boxShadow: page === t ? T.s1 : "none" }}>
+            <div key={`info-tab-${t}`} onClick={() => onSwitch(t)} style={{ flex: 1, padding: "8px 0", textAlign: "center" as const, fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: page === t ? 800 : 500, color: page === t ? T.ink : T.inkSoft, background: page === t ? T.white : "transparent", borderRadius: "9px", cursor: "pointer", transition: "all 0.15s", boxShadow: page === t ? T.s1 : "none" }}>
               {labels[t]}
             </div>
           ))}
@@ -371,7 +395,7 @@ export function InfoModal({ page, onClose, onSwitch }: {
         {page === "contact" && <ContactContent />}
 
         <div style={{ marginTop: "18px" }}>
-          <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Close</div>
+          <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Close</div>
         </div>
       </div>
     </BottomSheet>
@@ -399,7 +423,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
       <BottomSheet onClose={onClose}>
         <div style={{ padding: "24px 22px 0", textAlign: "center" as const }}>
           <div style={{ fontSize: "52px", marginBottom: "14px" }}>🎉</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>
             {isTrade ? "Trade Listed!" : "Listing Created!"}
           </div>
           <div style={{ fontSize: "12px", color: T.inkSoft, lineHeight: 1.7, marginBottom: "22px" }}>
@@ -410,7 +434,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
           <div style={{ background: T.skySoft, borderRadius: "12px", padding: "12px", marginBottom: "20px", fontSize: "11px", color: T.inkMid, lineHeight: 1.6 }}>
             ⚙️ This is a demo listing. Full listing submission coming in the next update.
           </div>
-          <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Done</div>
+          <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Done</div>
         </div>
       </BottomSheet>
     );
@@ -421,7 +445,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
       <div style={{ padding: "16px 20px 0" }}>
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>
             {isTrade ? "List a Trade" : "Add Listing"}
           </div>
           <div onClick={onClose} style={{ width: "28px", height: "28px", borderRadius: "50%", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
@@ -432,7 +456,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
         {/* Step indicator */}
         <div style={{ display: "flex", gap: "6px", marginBottom: "18px" }}>
           {(["details","pricing"] as ListingStep[]).map((s, i) => (
-            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px", background: step === s ? T.navy : T.inkGhost, transition: "background 0.2s" }} />
+            <div key={`step-${s}`} style={{ flex: 1, height: "3px", borderRadius: "2px", background: step === s || (step === "success") ? T.navy : T.inkGhost, transition: "background 0.2s" }} />
           ))}
         </div>
 
@@ -448,20 +472,20 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
                 <path d="M14 4V20M6 12L14 4L22 12" stroke={T.inkGhost} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M4 22H24" stroke={T.inkGhost} strokeWidth="2" strokeLinecap="round"/>
               </svg>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.inkSoft }}>Upload card photo</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.inkSoft }}>Upload card photo</div>
               <div style={{ fontSize: "10px", color: T.inkGhost, marginTop: "3px" }}>Front + back recommended</div>
             </div>
 
             {/* Card Name */}
             <div style={{ marginBottom: "12px" }}>
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Card Name</div>
-              <input value={cardName} onChange={e => setCardName(e.target.value)} placeholder="e.g. Emberveil Dragon ex SAR" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "Nunito Sans, sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
+              <input value={cardName} onChange={e => setCardName(e.target.value)} placeholder="e.g. Emberveil Dragon ex SAR" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "'Inter', sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
             </div>
 
             {/* Set Name */}
             <div style={{ marginBottom: "12px" }}>
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Set / Series</div>
-              <input value={setName} onChange={e => setSetName(e.target.value)} placeholder="e.g. SV151 · Scarlet & Violet" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "Nunito Sans, sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
+              <input value={setName} onChange={e => setSetName(e.target.value)} placeholder="e.g. SV151 · Scarlet & Violet" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "'Inter', sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
             </div>
 
             {/* Condition */}
@@ -469,7 +493,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Condition</div>
               <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" as const }}>
                 {conditions.map(c => (
-                  <div key={`cond-${c}`} onClick={() => setCondition(c)} style={{ padding: "5px 12px", borderRadius: "50px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, cursor: "pointer", background: condition === c ? T.navy : T.white, color: condition === c ? T.yellow : T.inkMid, border: `1.5px solid ${condition === c ? T.navy : T.border}`, transition: "all 0.12s" }}>{c}</div>
+                  <div key={`cond-${c}`} onClick={() => setCondition(c)} style={{ padding: "5px 12px", borderRadius: "50px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 700, cursor: "pointer", background: condition === c ? T.navy : T.white, color: condition === c ? T.yellow : T.inkMid, border: `1.5px solid ${condition === c ? T.navy : T.border}`, transition: "all 0.12s" }}>{c}</div>
                 ))}
               </div>
             </div>
@@ -479,15 +503,15 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Language</div>
               <div style={{ display: "flex", gap: "6px" }}>
                 {languages.map(l => (
-                  <div key={`lang-${l}`} onClick={() => setLanguage(l)} style={{ padding: "5px 14px", borderRadius: "50px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, cursor: "pointer", background: language === l ? T.navy : T.white, color: language === l ? T.yellow : T.inkMid, border: `1.5px solid ${language === l ? T.navy : T.border}`, transition: "all 0.12s" }}>{l}</div>
+                  <div key={`lang-${l}`} onClick={() => setLanguage(l)} style={{ padding: "5px 14px", borderRadius: "50px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 700, cursor: "pointer", background: language === l ? T.navy : T.white, color: language === l ? T.yellow : T.inkMid, border: `1.5px solid ${language === l ? T.navy : T.border}`, transition: "all 0.12s" }}>{l}</div>
                 ))}
               </div>
             </div>
 
-            <div onClick={() => setStep("pricing")} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
+            <div onClick={() => setStep("pricing")} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
               Next: Pricing →
             </div>
-            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>Cancel</div>
+            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>Cancel</div>
           </>
         )}
 
@@ -495,7 +519,7 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
           <>
             {/* Card summary */}
             <div style={{ background: T.skySoft, borderRadius: "12px", padding: "11px 13px", marginBottom: "16px" }}>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{cardName || "Your Card"}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{cardName || "Your Card"}</div>
               <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>{setName || "–"} · {condition} · {language}</div>
             </div>
 
@@ -503,12 +527,12 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
               /* Trade preferences */
               <div style={{ marginBottom: "14px" }}>
                 <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Card You Want in Return</div>
-                <input value={wantCard} onChange={e => setWantCard(e.target.value)} placeholder="e.g. Tidecrest Leviathan SAR" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "Nunito Sans, sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
+                <input value={wantCard} onChange={e => setWantCard(e.target.value)} placeholder="e.g. Tidecrest Leviathan SAR" style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "'Inter', sans-serif", fontSize: "13px", color: T.inkMid, outline: "none", background: T.skySoft }} />
                 <div style={{ marginTop: "10px" }}>
                   <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Will accept balance payment?</div>
                   <div style={{ display: "flex", gap: "8px" }}>
                     {["Yes, open to it", "No, equal trade only"].map(opt => (
-                      <div key={opt} style={{ flex: 1, padding: "8px", borderRadius: "10px", border: `1.5px solid ${T.border}`, fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 600, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", background: T.white }}>{opt}</div>
+                      <div key={opt} style={{ flex: 1, padding: "8px", borderRadius: "10px", border: `1.5px solid ${T.border}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 600, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", background: T.white }}>{opt}</div>
                     ))}
                   </div>
                 </div>
@@ -518,8 +542,8 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
               <div style={{ marginBottom: "14px" }}>
                 <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em", marginBottom: "7px" }}>Asking Price (₹)</div>
                 <div style={{ display: "flex", alignItems: "center", background: T.white, border: `2px solid ${T.navy}`, borderRadius: "14px", padding: "11px 14px", gap: "6px" }}>
-                  <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.inkMid }}>₹</span>
-                  <input value={price} onChange={e => setPrice(e.target.value)} placeholder="e.g. 4200" style={{ flex: 1, border: "none", outline: "none", fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, background: "transparent" }} />
+                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.inkMid }}>₹</span>
+                  <input value={price} onChange={e => setPrice(e.target.value)} placeholder="e.g. 4200" style={{ flex: 1, border: "none", outline: "none", fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, background: "transparent" }} />
                 </div>
                 <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "6px" }}>Market avg for this type: ₹2,000–₹6,000</div>
               </div>
@@ -529,10 +553,10 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
               🔒 All listings are escrow-protected. Buyers pay through RareNook before you ship.
             </div>
 
-            <div onClick={() => setStep("success")} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
+            <div onClick={() => setStep("success")} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
               {isTrade ? "📤 List Trade" : "📤 Publish Listing"}
             </div>
-            <div onClick={() => setStep("details")} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>← Back</div>
+            <div onClick={() => setStep("details")} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>← Back</div>
           </>
         )}
       </div>
@@ -540,44 +564,157 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
   );
 }
 
-// ─── STATUS BAR ───────────────────────────────────────────
+// ─── STATUS BAR — hidden on real mobile, shown in desktop preview ─
 export function StatusBar() {
   return (
-    <div style={{ background: T.sky, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 22px 2px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>
-      <span>9:41</span>
-      <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-        <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
-          <rect x="0" y="4" width="3" height="7" rx="1" fill={T.ink} opacity="0.4"/>
-          <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" fill={T.ink} opacity="0.6"/>
-          <rect x="9" y="0" width="3" height="11" rx="1" fill={T.ink}/>
-          <rect x="13.5" y="2" width="3" height="7" rx="1" fill={T.ink} opacity="0.3"/>
-        </svg>
-        <svg width="15" height="11" viewBox="0 0 15 11" fill="none">
-          <path d="M7.5 2C9.8 2 11.9 3.1 13.2 4.8L14.5 3.4C12.8 1.3 10.3 0 7.5 0C4.7 0 2.2 1.3 0.5 3.4L1.8 4.8C3.1 3.1 5.2 2 7.5 2Z" fill={T.ink} opacity="0.4"/>
-          <path d="M7.5 5C9 5 10.3 5.7 11.2 6.8L12.5 5.4C11.2 3.9 9.4 3 7.5 3C5.6 3 3.8 3.9 2.5 5.4L3.8 6.8C4.7 5.7 6 5 7.5 5Z" fill={T.ink} opacity="0.7"/>
-          <circle cx="7.5" cy="9" r="2" fill={T.ink}/>
-        </svg>
-        🔋
-      </span>
-    </div>
+    <>
+      <style>{`.rn-statusbar { display: none; }`}</style>
+      <div className="rn-statusbar" style={{ background: T.sky, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 22px 2px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>
+        <span>9:41</span>
+        <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
+            <rect x="0" y="4" width="3" height="7" rx="1" fill={T.ink} opacity="0.4"/>
+            <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" fill={T.ink} opacity="0.6"/>
+            <rect x="9" y="0" width="3" height="11" rx="1" fill={T.ink}/>
+            <rect x="13.5" y="2" width="3" height="7" rx="1" fill={T.ink} opacity="0.3"/>
+          </svg>
+          🔋
+        </span>
+      </div>
+    </>
   );
 }
 
-// ─── LOGO MARK (no Pokéball — just R monogram) ────────────
-export function LogoBall() {
+// ─── LOGO BALL — collectible ball mark ───────────────────
+export function LogoBall({ size = 28 }: { size?: number }) {
   return (
-    <div style={{ width: "26px", height: "26px", borderRadius: "8px", background: T.coral, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: `1px 1px 0 rgba(0,0,0,0.2)` }}>
-      <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.white, lineHeight: 1 }}>R</span>
-    </div>
+    <svg width={size} height={size} viewBox="0 0 28 28" fill="none" style={{ flexShrink: 0 }}>
+      {/* Ball outline */}
+      <circle cx="14" cy="14" r="13" fill={T.coral} stroke={T.ink} strokeWidth="2"/>
+      {/* White bottom half */}
+      <path d="M1.2 14 A13 13 0 0 0 26.8 14 Z" fill="white"/>
+      {/* Center stripe */}
+      <rect x="1" y="12.5" width="26" height="3" fill={T.ink}/>
+      {/* Center button */}
+      <circle cx="14" cy="14" r="3.5" fill="white" stroke={T.ink} strokeWidth="2"/>
+    </svg>
+  );
+}
+
+// ─── COLLECTIBLE FEATURE ICONS — yellow fill, navy outline ──
+export function IconCart({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <path d="M8 10H10.5L13.5 22H25L27 14H11.5" stroke={T.ink} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="15" cy="26" r="2" fill={T.ink}/>
+      <circle cx="23" cy="26" r="2" fill={T.ink}/>
+    </svg>
+  );
+}
+
+export function IconHandshake({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <path d="M7 20L11 24L15 21L19 24L25 20" stroke={T.ink} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M7 16L11 13H16L20 16H25L29 18" stroke={T.ink} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M11 24V28M25 20V24" stroke={T.ink} strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+export function IconPackage({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <rect x="9" y="17" width="18" height="12" rx="2" fill="white" stroke={T.ink} strokeWidth="2"/>
+      <path d="M9 17L12 12H24L27 17" stroke={T.ink} strokeWidth="2" strokeLinejoin="round"/>
+      <path d="M15 17V12" stroke={T.ink} strokeWidth="2"/>
+      <circle cx="24" cy="14" r="5" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <path d="M22 14L23.5 15.5L26.5 12.5" stroke={T.ink} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+export function IconChat({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <rect x="7" y="9" width="16" height="12" rx="3" fill="white" stroke={T.ink} strokeWidth="2"/>
+      <path d="M11 25L9 28V25H7" stroke={T.ink} strokeWidth="2" strokeLinejoin="round"/>
+      <circle cx="11" cy="15" r="1.5" fill={T.ink}/>
+      <circle cx="15" cy="15" r="1.5" fill={T.ink}/>
+      <circle cx="19" cy="15" r="1.5" fill={T.ink}/>
+      <rect x="15" y="16" width="14" height="10" rx="3" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      <path d="M29 26V28L26 26" stroke={T.ink} strokeWidth="2" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+// One Piece skull logo — original inspired, not direct copy
+export function IconOnePiece({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      {/* Skull */}
+      <circle cx="18" cy="17" r="6.5" fill="white" stroke={T.ink} strokeWidth="1.8"/>
+      {/* Eyes */}
+      <circle cx="15.5" cy="16" r="2" fill={T.ink}/>
+      <circle cx="20.5" cy="16" r="2" fill={T.ink}/>
+      {/* Smile */}
+      <path d="M15 20.5C15 20.5 16.5 22 18 22C19.5 22 21 20.5 21 20.5" stroke={T.ink} strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Crossbones */}
+      <path d="M5 13L11 17M5 21L11 17" stroke={T.ink} strokeWidth="2" strokeLinecap="round"/>
+      <path d="M31 13L25 17M31 21L25 17" stroke={T.ink} strokeWidth="2" strokeLinecap="round"/>
+      <circle cx="6" cy="12" r="2" fill={T.ink}/>
+      <circle cx="6" cy="22" r="2" fill={T.ink}/>
+      <circle cx="30" cy="12" r="2" fill={T.ink}/>
+      <circle cx="30" cy="22" r="2" fill={T.ink}/>
+      {/* Straw hat brim */}
+      <path d="M11 12H25" stroke={T.coral} strokeWidth="3" strokeLinecap="round"/>
+      <ellipse cx="18" cy="10.5" rx="5" ry="3" fill={T.yellow} stroke={T.coral} strokeWidth="1.5"/>
+    </svg>
+  );
+}
+
+// Collectible ball — for Pokémon category
+export function IconPokeCategory({ size = 36 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 36 36" fill="none">
+      <rect x="1" y="1" width="34" height="34" rx="9" fill={T.yellow} stroke={T.ink} strokeWidth="2"/>
+      {/* Ball */}
+      <circle cx="18" cy="18" r="9" fill={T.coral} stroke={T.ink} strokeWidth="2"/>
+      <path d="M9.2 18 A9 9 0 0 0 26.8 18 Z" fill="white"/>
+      <rect x="9" y="16.5" width="18" height="3" fill={T.ink}/>
+      <circle cx="18" cy="18" r="2.8" fill="white" stroke={T.ink} strokeWidth="2"/>
+    </svg>
   );
 }
 
 // ─── PHONE SHELL ──────────────────────────────────────────
+// On mobile: full-screen. On desktop (when used in preview): 345px shell.
 export function PhoneShell({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ width: "345px", background: T.sky, borderRadius: "44px", overflow: "hidden", boxShadow: `${T.s3}, 0 0 0 1px rgba(255,255,255,0.6) inset`, position: "relative" }}>
-      {children}
-    </div>
+    <>
+      <style>{`
+        .rn-shell {
+          width: 100%;
+          max-width: 100%;
+          background: #C9E9F7;
+          border-radius: 0;
+          overflow-x: hidden;
+          position: relative;
+          min-height: 100vh;
+          box-shadow: none;
+        }
+        .rn-scroll {
+          max-height: none !important;
+          overflow-y: visible !important;
+        }
+      `}</style>
+      <div className="rn-shell">{children}</div>
+    </>
   );
 }
 
@@ -585,7 +722,7 @@ export function PhoneShell({ children }: { children: React.ReactNode }) {
 export function SectionHeader({ title, link, onLink }: { title: string; link?: string; onLink?: () => void }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 16px 10px" }}>
-      <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>{title}</span>
+      <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>{title}</span>
       {link && <span onClick={onLink} style={{ fontSize: "12px", fontWeight: 700, color: T.lavender, cursor: "pointer" }}>{link}</span>}
     </div>
   );
@@ -599,7 +736,7 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
         <circle cx="6" cy="6" r="5" stroke={T.ink} strokeWidth="1.5"/>
         <path d="M10 10L13 13" stroke={T.ink} strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
-      <input placeholder={placeholder} style={{ border: "none", outline: "none", flex: 1, fontFamily: "Nunito Sans, sans-serif", fontSize: "13px", color: T.inkMid, background: "transparent" }} />
+      <input placeholder={placeholder} style={{ border: "none", outline: "none", flex: 1, fontFamily: "'Inter', sans-serif", fontSize: "13px", color: T.inkMid, background: "transparent" }} />
     </div>
   );
 }
@@ -636,17 +773,29 @@ const NAV_ITEMS = [
 
 export function BottomNav({ active, onNavigate }: { active: string; onNavigate: (screen: Screen) => void }) {
   return (
-    <div style={{ background: T.white, borderTop: `1px solid ${T.border}`, display: "flex", justifyContent: "space-around", padding: "10px 0 14px" }}>
+    <>
+      {/* Spacer so content isn't hidden under the sticky nav */}
+      <div style={{ height: "72px" }} />
+      <div style={{
+        position: "fixed", bottom: 0, left: 0, right: 0,
+        background: "rgba(255,255,255,0.97)",
+        borderTop: `1px solid ${T.border}`,
+        display: "flex", justifyContent: "space-around",
+        padding: "10px 0 max(14px, env(safe-area-inset-bottom))",
+        zIndex: 50,
+        backdropFilter: "blur(10px)",
+      }}>
       {NAV_ITEMS.map(({ label, screen, Icon }) => {
         const isActive = label === active;
         return (
           <div key={label} onClick={() => onNavigate(screen)} style={{ display: "flex", flexDirection: "column" as const, alignItems: "center", gap: "4px", cursor: "pointer", position: "relative", padding: "2px 6px", borderRadius: "10px", transition: "opacity 0.15s" }}>
             {isActive && <div style={{ position: "absolute", top: "-10px", width: "20px", height: "3px", background: T.navy, borderRadius: "2px" }} />}
             <Icon active={isActive} />
-            <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "9px", fontWeight: isActive ? 700 : 500, color: isActive ? T.navy : T.inkGhost, letterSpacing: "0.02em" }}>{label}</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px", fontWeight: isActive ? 700 : 500, color: isActive ? T.navy : T.inkGhost, letterSpacing: "0.02em" }}>{label}</span>
           </div>
         );
       })}
-    </div>
+      </div>
+    </>
   );
 }
