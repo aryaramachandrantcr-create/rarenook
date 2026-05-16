@@ -34,7 +34,7 @@ function FilterRow({ label, options, value, onChange }: {
 }) {
   return (
     <div style={{ marginBottom: "18px" }}>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.inkMid, marginBottom: "8px", textTransform: "uppercase" as const, letterSpacing: "0.06em" }}>{label}</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.inkMid, marginBottom: "8px", textTransform: "uppercase" as const, letterSpacing: "0.06em" }}>{label}</div>
       <div style={{ display: "flex", flexWrap: "wrap" as const, gap: "7px" }}>
         {options.map(opt => {
           const isOn = value === opt;
@@ -44,7 +44,7 @@ function FilterRow({ label, options, value, onChange }: {
               onClick={() => onChange(opt)}
               style={{
                 padding: "5px 13px", borderRadius: "50px",
-                fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700,
+                fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700,
                 cursor: "pointer",
                 background: isOn ? T.navy : T.white,
                 color: isOn ? T.yellow : T.inkMid,
@@ -79,7 +79,7 @@ function FilterDrawer({ filters, onChange, onApply, onReset, onClose }: {
         <div style={{ width: "36px", height: "4px", background: T.inkGhost, borderRadius: "2px", margin: "0 auto 18px" }} />
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Filter Cards</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Filter Cards</div>
           <div onClick={onReset} style={{ fontSize: "12px", fontWeight: 700, color: T.lavender, cursor: "pointer" }}>Reset all</div>
         </div>
 
@@ -91,7 +91,7 @@ function FilterDrawer({ filters, onChange, onApply, onReset, onClose }: {
 
         <div
           onClick={onApply}
-          style={{ background: T.navy, color: T.yellow, fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, padding: "14px", borderRadius: "16px", textAlign: "center" as const, cursor: "pointer", marginTop: "8px" }}
+          style={{ background: T.navy, color: T.yellow, fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, padding: "14px", borderRadius: "16px", textAlign: "center" as const, cursor: "pointer", marginTop: "8px" }}
         >
           Apply Filters
         </div>
@@ -107,6 +107,7 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
   const [filters, setFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [appliedFilters, setAppliedFilters] = useState<Filters>(DEFAULT_FILTERS);
   const [modal, setModal] = useState<{ title: string; message: string } | null>(null);
+  const [query, setQuery] = useState("");
 
   function handleCategoryClick(cat: string) {
     if (cat === "One Piece" || cat === "Anime") {
@@ -147,11 +148,20 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
   // Count active filters
   const activeFilterCount = Object.values(appliedFilters).filter(v => v !== "Any").length;
 
-  const displayCards = (activeCat === "All" || activeCat === "TCG Cards")
+  const baseCards = (activeCat === "All" || activeCat === "TCG Cards")
     ? ALL_CARDS.filter(c => c.category === "cards")
     : activeCat === "One Piece"
     ? ALL_CARDS.filter(c => c.category === "onepiece")
     : ALL_CARDS.filter(c => c.category === "cards");
+
+  const displayCards = query.trim() === ""
+    ? baseCards
+    : baseCards.filter(c =>
+        c.name.toLowerCase().includes(query.toLowerCase()) ||
+        c.set.toLowerCase().includes(query.toLowerCase())  ||
+        c.series.toLowerCase().includes(query.toLowerCase()) ||
+        c.cond.toLowerCase().includes(query.toLowerCase())
+      );
 
   return (
     <>
@@ -170,8 +180,8 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
         <StatusBar />
 
         {/* Top Nav */}
-        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy }}>Marketplace</div>
+        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px", position: "sticky" as const, top: 0, zIndex: 40 }}>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy }}>Marketplace</div>
           <div
             onClick={() => setShowFilter(true)}
             style={{
@@ -191,8 +201,21 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
           </div>
         </div>
 
-        <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
-          <SearchBar placeholder="Search cards, sets, or collectors..." />
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
+          {/* Search — live filter */}
+          <div style={{ margin: "0 16px 13px", background: T.white, border: `1.5px solid ${T.border}`, borderRadius: "18px", display: "flex", alignItems: "center", padding: "9px 13px", gap: "8px", boxShadow: T.s1 }}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" opacity={0.4}>
+              <circle cx="6" cy="6" r="5" stroke={T.ink} strokeWidth="1.5"/>
+              <path d="M10 10L13 13" stroke={T.ink} strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+            <input
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Search cards, sets, grades..."
+              style={{ border: "none", outline: "none", flex: 1, fontFamily: "'Inter', sans-serif", fontSize: "13px", color: T.inkMid, background: "transparent" }}
+            />
+            {query && <div onClick={() => setQuery("")} style={{ cursor: "pointer", color: T.inkGhost, fontSize: "16px", lineHeight: 1 }}>×</div>}
+          </div>
 
           {/* Category chips */}
           <div style={{ display: "flex", gap: "7px", padding: "0 16px 15px", overflowX: "auto" }}>
@@ -204,7 +227,7 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
                   onClick={() => handleCategoryClick(cat)}
                   style={{
                     flexShrink: 0, padding: "6px 15px", borderRadius: "50px",
-                    fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700,
+                    fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700,
                     cursor: "pointer", whiteSpace: "nowrap" as const,
                     background: isOn ? T.navy : T.white,
                     color: isOn ? T.yellow : T.inkMid,
@@ -248,16 +271,16 @@ export default function MarketplaceScreen({ onNavigate }: NavProps) {
               >
                 {/* Image */}
                 <div style={{ height: "106px", background: card.bg, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                  <span style={{ position: "absolute", top: "7px", left: "9px", fontSize: "9px", fontWeight: 700, color: "rgba(28,35,64,0.3)", fontFamily: "Nunito, sans-serif" }}>{card.no}</span>
+                  <span style={{ position: "absolute", top: "7px", left: "9px", fontSize: "9px", fontWeight: 700, color: "rgba(28,35,64,0.3)", fontFamily: "'Space Grotesk', sans-serif" }}>{card.no}</span>
                   <CardArt artKey={card.art as ArtKey} size={54} />
                 </div>
                 {/* Body — improved hierarchy */}
                 <div style={{ padding: "9px 10px 11px" }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.name}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.name}</div>
                   <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px", marginBottom: "5px" }}>{card.set} · {card.lang}</div>
-                  <div style={{ display: "inline-block", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 8px", borderRadius: "50px", border: "1.5px solid rgba(0,0,0,0.1)", ...condStyle[card.condType], marginBottom: "5px" }}>{card.cond}</div>
+                  <div style={{ display: "inline-block", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 8px", borderRadius: "50px", border: "1.5px solid rgba(0,0,0,0.1)", ...condStyle[card.condType], marginBottom: "5px" }}>{card.cond}</div>
                   <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase" as const }}>Market Value</div>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>{card.price}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>{card.price}</div>
                 </div>
               </div>
             ))}
