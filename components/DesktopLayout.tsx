@@ -357,11 +357,21 @@ function DesktopMarketplace({ onNavigate }: { onNavigate: (s: Screen) => void })
 }
 
 // ─── DESKTOP SCREEN WRAPPER ───────────────────────────────
-// Renders mobile screens centered in a desktop-appropriate container
+// Centres mobile screens in a constrained column on desktop
 function DesktopScreenWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex", justifyContent: "center", padding: "40px 24px 60px", minHeight: "calc(100vh - 64px)" }}>
-      <div style={{ width: "100%", maxWidth: "480px" }}>
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      padding: "32px 24px 60px",
+      minHeight: "calc(100vh - 64px)",
+      background: T.sky,
+    }}>
+      <div style={{
+        width: "100%",
+        maxWidth: "440px",
+        background: T.sky,
+      }}>
         {children}
       </div>
     </div>

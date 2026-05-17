@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Force sky blue on every container â€” must come AFTER tailwind import */
 html {
   background: #C9E9F7;
 }
@@ -21,4 +20,29 @@ body {
   background: #C9E9F7;
   min-height: 100vh;
   width: 100%;
+}
+
+/* â”€â”€ DESKTOP: hide mobile bottom nav, show desktop layout â”€â”€ */
+@media (min-width: 768px) {
+  .rn-bottom-nav {
+    display: none !important;
+  }
+  .rn-bottom-spacer {
+    display: none !important;
+  }
+  /* Mobile screens centred in a max-width container on desktop */
+  .rn-mobile-screen {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+  }
+}
+
+/* â”€â”€ MOBILE: full bleed â”€â”€ */
+@media (max-width: 767px) {
+  .rn-mobile-screen {
+    width: 100%;
+    min-height: 100vh;
+  }
 }

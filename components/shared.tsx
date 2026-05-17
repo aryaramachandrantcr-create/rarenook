@@ -695,9 +695,7 @@ export function IconPokeCategory({ size = 36 }: { size?: number }) {
 // ─── PHONE SHELL — truly full-screen, zero gaps ───────────
 export function PhoneShell({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{
-      width: "100vw",
-      minHeight: "100vh",
+    <div className="rn-mobile-screen" style={{
       background: T.sky,
       overflowX: "hidden",
       position: "relative",
@@ -763,9 +761,8 @@ const NAV_ITEMS = [
 export function BottomNav({ active, onNavigate }: { active: string; onNavigate: (screen: Screen) => void }) {
   return (
     <>
-      {/* Spacer so content isn't hidden under the sticky nav */}
-      <div style={{ height: "72px" }} />
-      <div style={{
+      <div className="rn-bottom-spacer" style={{ height: "72px" }} />
+      <div className="rn-bottom-nav" style={{
         position: "fixed", bottom: 0, left: 0, right: 0,
         background: "rgba(255,255,255,0.97)",
         borderTop: `1px solid ${T.border}`,
