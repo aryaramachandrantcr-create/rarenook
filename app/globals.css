@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
-html {
-  background: #C9E9F7;
-}
+/* FULL VIEWPORT BACKGROUND FIX */
 
-body {
-  margin: 0;
-  padding: 0;
+html,
+body,
+#__next {
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   background: #C9E9F7;
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
 }
 
-#__next {
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: ensure app root also fills viewport */
+main {
   background: #C9E9F7;
   min-height: 100vh;
-  width: 100%;
 }
