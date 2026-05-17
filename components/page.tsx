@@ -35,7 +35,6 @@ export default function Home() {
     return <DesktopLayout screen={screen} onNavigate={handleNavigate} />;
   }
 
-  // Mobile — no wrapper at all, screens render directly
   return (
     <>
       {screen === "Home"        && <HomeScreen        onNavigate={handleNavigate} />}
@@ -48,3 +47,4 @@ export default function Home() {
     </>
   );
 }
+
