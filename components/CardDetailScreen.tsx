@@ -1,139 +1,131 @@
 "use client";
 
+import { useState } from "react";
 import {
   NavProps, T, ALL_CARDS,
-  CardArt, ArtKey,
+  CardArt, ArtKey, Modal,
   StatusBar, PhoneShell, BottomNav,
 } from "./shared";
 
-// Use the first card's data for the demo
 const DEMO = ALL_CARDS[0];
 
 export default function CardDetailScreen({ onNavigate }: NavProps) {
+  const [modal, setModal] = useState<{ title: string; message: string } | null>(null);
+
   return (
-    <PhoneShell>
-      <StatusBar />
+    <>
+      {modal && <Modal title={modal.title} message={modal.message} onClose={() => setModal(null)} />}
+      <PhoneShell>
+        <StatusBar />
 
-      {/* Top Nav */}
-      <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
-        <div
-          onClick={() => onNavigate("Marketplace")}
-          style={{ fontSize: "14px", fontWeight: 700, color: T.lavender, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}
-        >
-          <svg width="8" height="13" viewBox="0 0 8 13" fill="none">
-            <path d="M7 1L1 6.5L7 12" stroke={T.lavender} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Back
-        </div>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink }}>Card Detail</div>
-        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ cursor: "pointer" }}>
-            <path d="M9 2L11 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H7L9 2Z" stroke="#FFD740" strokeWidth="1.7" strokeLinejoin="round"/>
-          </svg>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ cursor: "pointer" }}>
-            <circle cx="4" cy="9" r="1.5" fill={T.inkSoft}/>
-            <circle cx="9" cy="9" r="1.5" fill={T.inkSoft}/>
-            <circle cx="14" cy="9" r="1.5" fill={T.inkSoft}/>
-          </svg>
-        </div>
-      </div>
-
-      <div style={{ overflowY: "visible", overflowX: "hidden" }}>
-
-        {/* Hero image */}
-        <div style={{ height: "220px", background: `linear-gradient(150deg, ${T.skySoft} 0%, #9DD0EA 100%)`, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-          <div
-            onClick={() => onNavigate("Marketplace")}
-            style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", width: "30px", height: "30px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", boxShadow: T.s1, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
-          >
-            <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke={T.ink} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        {/* Top Nav */}
+        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px", position: "sticky" as const, top: 0, zIndex: 40 }}>
+          <div onClick={() => onNavigate("Marketplace")} style={{ fontSize: "14px", fontWeight: 700, color: T.lavender, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M7 1L1 6.5L7 12" stroke={T.lavender} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            Back
           </div>
-          <div style={{ width: "130px", height: "178px", background: DEMO.bg, borderRadius: "14px", boxShadow: T.s3, display: "flex", alignItems: "center", justifyContent: "center", border: `2px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
-            <CardArt artKey={DEMO.art as ArtKey} size={88} />
-            <div style={{ position: "absolute", inset: 0, borderRadius: "14px", background: "linear-gradient(135deg, rgba(255,255,255,0.35) 0%, transparent 55%)", pointerEvents: "none" }} />
-          </div>
-          <div
-            style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", width: "30px", height: "30px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", boxShadow: T.s1, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}
-          >
-            <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke={T.ink} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink }}>Card Detail</div>
+          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ cursor: "pointer" }}>
+              <path d="M9 2L11 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H7L9 2Z" stroke="#FFD740" strokeWidth="1.7" strokeLinejoin="round"/>
+            </svg>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ cursor: "pointer" }}>
+              <circle cx="4" cy="9" r="1.5" fill={T.inkSoft}/><circle cx="9" cy="9" r="1.5" fill={T.inkSoft}/><circle cx="14" cy="9" r="1.5" fill={T.inkSoft}/>
+            </svg>
           </div>
         </div>
 
-        {/* Thumbnails */}
-        <div style={{ display: "flex", gap: "7px", justifyContent: "center", padding: "10px 0 13px" }}>
-          {[true, false, false, false].map((active, i) => (
-            <div key={`cd-thumb-${i}`} style={{ width: "40px", height: "40px", borderRadius: "10px", background: active ? DEMO.bg : "rgba(255,255,255,0.7)", display: "flex", alignItems: "center", justifyContent: "center", border: `1.5px solid ${active ? T.navy : "transparent"}`, boxShadow: active ? T.s1 : "none", cursor: "pointer", overflow: "hidden" }}>
-              <CardArt artKey={DEMO.art as ArtKey} size={28} />
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
+
+          {/* Hero */}
+          <div style={{ height: "220px", background: `linear-gradient(150deg, ${T.skySoft} 0%, #9DD0EA 100%)`, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
+            <div onClick={() => onNavigate("Marketplace")} style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", width: "30px", height: "30px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", boxShadow: T.s1, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6L6 11" stroke={T.ink} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
-          ))}
-        </div>
-
-        {/* Card info — improved hierarchy */}
-        <div style={{ padding: "0 16px 13px" }}>
-          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{DEMO.name}</div>
-          <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px", lineHeight: 1.6 }}>
-            {DEMO.series} · {DEMO.set} · {DEMO.lang} · {DEMO.year}
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", marginBottom: "4px" }}>
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>{DEMO.cond}</span>
-            <span style={{ fontSize: "12px", fontWeight: 700, color: T.mint }}>↑ 12%</span>
-          </div>
-          <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, marginBottom: "3px" }}>Market Value</div>
-          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>{DEMO.price}</div>
-        </div>
-
-        {/* Market Intelligence */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", margin: "0 16px 11px" }}>
-          {[
-            { label: "Global Avg", value: "$290",    sub: "USD",       color: T.ink     },
-            { label: "India Avg",  value: "₹24,200", sub: "avg price", color: T.coral   },
-            { label: "Last Sale",  value: "₹23,800", sub: "verified",  color: T.mint    },
-          ].map((stat) => (
-            <div key={stat.label} style={{ background: T.white, borderRadius: "12px", boxShadow: T.s1, padding: "10px 8px", textAlign: "center" as const, border: `1.5px solid ${T.border}` }}>
-              <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>{stat.label}</div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: stat.color, marginTop: "4px" }}>{stat.value}</div>
-              <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>{stat.sub}</div>
+            <div style={{ width: "130px", height: "178px", background: DEMO.bg, borderRadius: "14px", boxShadow: T.s3, display: "flex", alignItems: "center", justifyContent: "center", border: `2px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
+              <CardArt artKey={DEMO.art as ArtKey} size={88} />
+              <div style={{ position: "absolute", inset: 0, borderRadius: "14px", background: "linear-gradient(135deg, rgba(255,255,255,0.35) 0%, transparent 55%)", pointerEvents: "none" }} />
             </div>
-          ))}
-        </div>
-
-        {/* Recommendation */}
-        <div style={{ margin: "0 16px 12px", padding: "10px 13px", background: T.mintSoft, borderRadius: "12px", borderLeft: `3px solid ${T.mint}`, fontSize: "11px", fontWeight: 500, color: "#16854E", lineHeight: 1.55 }}>
-          💡 Recommended range ₹22k–₹26k · Price trending up — good time to sell!
-        </div>
-
-        {/* Seller */}
-        <div style={{ margin: "0 16px 13px", background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px" }}>
-          <div style={{ width: "42px", height: "42px", borderRadius: "50%", background: "#FFF5C0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `2px solid ${T.border}` }}>R</div>
-          <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 800, color: T.ink }}>Rahul_TCG</div>
-            <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>Mumbai · ⭐ 4.9 · 143 sales · 99% authentic</div>
+            <div style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", width: "30px", height: "30px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", boxShadow: T.s1, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+              <svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1L6 6L1 11" stroke={T.ink} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
           </div>
-          <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 Trusted</div>
+
+          {/* Thumbnails */}
+          <div style={{ display: "flex", gap: "7px", justifyContent: "center", padding: "10px 0 13px" }}>
+            {[true, false, false, false].map((active, i) => (
+              <div key={`cd-thumb-${i}`} style={{ width: "40px", height: "40px", borderRadius: "10px", background: active ? DEMO.bg : "rgba(255,255,255,0.7)", display: "flex", alignItems: "center", justifyContent: "center", border: `1.5px solid ${active ? T.navy : "transparent"}`, boxShadow: active ? T.s1 : "none", cursor: "pointer", overflow: "hidden" }}>
+                <CardArt artKey={DEMO.art as ArtKey} size={28} />
+              </div>
+            ))}
+          </div>
+
+          {/* Card info */}
+          <div style={{ padding: "0 16px 13px" }}>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{DEMO.name}</div>
+            <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px", lineHeight: 1.6 }}>{DEMO.series} · {DEMO.set} · {DEMO.lang} · {DEMO.year}</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", marginBottom: "4px" }}>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>{DEMO.cond}</span>
+              <span style={{ fontSize: "12px", fontWeight: 700, color: T.mint }}>↑ 12%</span>
+            </div>
+            <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, marginBottom: "3px" }}>Market Value</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>{DEMO.price}</div>
+          </div>
+
+          {/* Market Intelligence */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", margin: "0 16px 11px" }}>
+            {[
+              { label: "Global Avg", value: "$290",    sub: "USD",       color: T.ink   },
+              { label: "India Avg",  value: "₹24,200", sub: "avg price", color: T.coral },
+              { label: "Last Sale",  value: "₹23,800", sub: "verified",  color: T.mint  },
+            ].map(stat => (
+              <div key={stat.label} style={{ background: T.white, borderRadius: "12px", boxShadow: T.s1, padding: "10px 8px", textAlign: "center" as const, border: `1.5px solid ${T.border}` }}>
+                <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>{stat.label}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: stat.color, marginTop: "4px" }}>{stat.value}</div>
+                <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Recommendation */}
+          <div style={{ margin: "0 16px 12px", padding: "10px 13px", background: T.mintSoft, borderRadius: "12px", borderLeft: `3px solid ${T.mint}`, fontSize: "11px", fontWeight: 500, color: "#16854E", lineHeight: 1.55 }}>
+            💡 Recommended range ₹22k–₹26k · Price trending up — good time to sell!
+          </div>
+
+          {/* Seller */}
+          <div style={{ margin: "0 16px 13px", background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px" }}>
+            <div style={{ width: "42px", height: "42px", borderRadius: "50%", background: "#FFF5C0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `2px solid ${T.border}` }}>R</div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 800, color: T.ink }}>Rahul_TCG</div>
+              <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>Mumbai · ⭐ 4.9 · 143 sales · 99% authentic</div>
+            </div>
+            <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 Trusted</div>
+          </div>
+
+          {/* CTAs — both now functional */}
+          <div style={{ display: "flex", gap: "10px", padding: "0 16px", marginBottom: "12px" }}>
+            <div
+              onClick={() => setModal({ title: "Buy Now 🛍", message: "Secure checkout with RareNook Escrow is coming very soon. Your payment will be held safely until the card is verified and delivered." })}
+              style={{ flex: 1.4, padding: "13px 0", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy, textAlign: "center" as const, cursor: "pointer", boxShadow: `2px 3px 0 ${T.navy}`, transition: "transform 0.15s" }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
+            >Buy Now</div>
+            <div
+              onClick={() => onNavigate("TradeHub")}
+              style={{ flex: 1, padding: "13px 0", background: "transparent", border: `2px solid ${T.borderMid}`, borderRadius: "18px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", transition: "border-color 0.15s" }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = T.navy}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = T.borderMid}
+            >⇄ Make Offer</div>
+          </div>
+
+          <div style={{ textAlign: "center" as const, fontSize: "10px", color: T.inkSoft, padding: "0 16px 14px", lineHeight: 1.5 }}>
+            🔒 Protected by RareNook Escrow · Authenticity verified before delivery
+          </div>
+          <div style={{ height: "14px" }} />
         </div>
 
-        {/* CTAs */}
-        <div style={{ display: "flex", gap: "10px", padding: "0 16px", marginBottom: "12px" }}>
-          <div
-            style={{ flex: 1.4, padding: "13px 0", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy, textAlign: "center" as const, cursor: "pointer", boxShadow: `2px 3px 0 ${T.navy}`, transition: "transform 0.15s" }}
-            onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"}
-            onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
-          >Buy Now</div>
-          <div
-            style={{ flex: 1, padding: "13px 0", background: "transparent", border: `2px solid ${T.borderMid}`, borderRadius: "18px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", transition: "border-color 0.15s" }}
-            onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = T.navy}
-            onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = T.borderMid}
-          >⇄ Make Offer</div>
-        </div>
-
-        <div style={{ textAlign: "center" as const, fontSize: "10px", color: T.inkSoft, padding: "0 16px 14px", lineHeight: 1.5 }}>
-          🔒 Protected by RareNook Escrow · Authenticity verified before delivery
-        </div>
-
-        <div style={{ height: "14px" }} />
-      </div>
-
-      <BottomNav active="Market" onNavigate={onNavigate} />
-    </PhoneShell>
+        <BottomNav active="Market" onNavigate={onNavigate} />
+      </PhoneShell>
+    </>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { NavProps, T, StatusBar, PhoneShell, BottomNav } from "./shared";
+import { NavProps, T, StatusBar, PhoneShell, BottomNav, Modal } from "./shared";
 
 // ─── TYPES ────────────────────────────────────────────────
-type ModalType = "support" | "negotiate" | "payment" | "loading" | "success" | null;
+type ModalType = "support" | "negotiate" | "payment" | "loading" | "success" | "tracksoon" | null;
 
 // ─── DATA ─────────────────────────────────────────────────
 const CHAT_INIT = [
@@ -398,8 +398,15 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
       {modal === "loading"   && <LoadingModal    onDone={handleLoadingDone}    />}
       {modal === "success"   && (
         <SuccessModal
-          onTrack={() => { setModal(null); onNavigate("TradeHub"); }}
+          onTrack={() => setModal("tracksoon")}
           onHub={() => { setModal(null); onNavigate("TradeHub"); }}
+        />
+      )}
+      {modal === "tracksoon" && (
+        <Modal
+          title="Track Trade 🚧"
+          message="Live shipment tracking and escrow status updates are coming in the next version of RareNook. You'll be notified at every step!"
+          onClose={() => { setModal(null); onNavigate("TradeHub"); }}
         />
       )}
 
