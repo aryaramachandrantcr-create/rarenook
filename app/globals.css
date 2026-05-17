@@ -1,26 +1,24 @@
 @import "tailwindcss";
 
-/* FULL VIEWPORT BACKGROUND FIX */
-
-html,
-body,
-#__next {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+/* Force sky blue on every container â€” must come AFTER tailwind import */
+html {
   background: #C9E9F7;
-  overflow-x: hidden;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #C9E9F7;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
 }
 
-/* Optional: ensure app root also fills viewport */
-main {
+#__next {
   background: #C9E9F7;
   min-height: 100vh;
+  width: 100%;
 }
