@@ -35,15 +35,9 @@ export default function Home() {
     return <DesktopLayout screen={screen} onNavigate={handleNavigate} />;
   }
 
-  // Mobile — truly full bleed, no wrapper padding
+  // Mobile — no wrapper at all, screens render directly
   return (
-    <div style={{
-      position: "relative",
-      width: "100vw",
-      minHeight: "100vh",
-      background: "#C9E9F7",
-      overflowX: "hidden",
-    }}>
+    <>
       {screen === "Home"        && <HomeScreen        onNavigate={handleNavigate} />}
       {screen === "Marketplace" && <MarketplaceScreen  onNavigate={handleNavigate} />}
       {screen === "CardDetail"  && <CardDetailScreen   onNavigate={handleNavigate} />}
@@ -51,6 +45,6 @@ export default function Home() {
       {screen === "TradeOffer"  && <TradeOfferScreen    onNavigate={handleNavigate} />}
       {screen === "Community"   && <CommunityScreen     onNavigate={handleNavigate} />}
       {screen === "Profile"     && <ProfileScreen       onNavigate={handleNavigate} />}
-    </div>
+    </>
   );
 }
