@@ -80,9 +80,9 @@ export default function HomeScreen({ onNavigate }: NavProps) {
         <StatusBar />
 
         {/* ── Top Nav ── */}
-        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
+        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px", position: "sticky" as const, top: 0, zIndex: 40 }}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "7px", fontFamily: "Nunito, sans-serif", fontSize: "21px", fontWeight: 900, color: T.navy }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "7px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "21px", fontWeight: 900, color: T.navy }}>
               <LogoBall />
               Rare<span style={{ color: T.coral }}>Nook</span>
             </div>
@@ -105,18 +105,18 @@ export default function HomeScreen({ onNavigate }: NavProps) {
             {/* Avatar → Profile */}
             <div
               onClick={() => onNavigate("Profile")}
-              style={{ width: "36px", height: "36px", borderRadius: "50%", background: T.yellow, border: `2.5px solid ${T.navy}`, boxShadow: `2px 2px 0 ${T.navy}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "14px", color: T.navy, cursor: "pointer" }}
+              style={{ width: "36px", height: "36px", borderRadius: "50%", background: T.yellow, border: `2.5px solid ${T.navy}`, boxShadow: `2px 2px 0 ${T.navy}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, fontSize: "14px", color: T.navy, cursor: "pointer" }}
             >A</div>
           </div>
         </div>
 
         {/* ── Scroll area ── */}
-        <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
 
           <SearchBar placeholder="Search cards, sets, sellers..." />
 
           {/* ── HERO / ONBOARDING SECTION ── */}
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "22px", boxShadow: T.s2, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+          <div style={{ margin: "0 clamp(12px, 4vw, 20px) 16px", background: T.white, borderRadius: "22px", boxShadow: T.s2, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
             {/* Colour band — warm yellow collectible */}
             <div style={{ background: "linear-gradient(135deg, #FFD740 0%, #FFE878 60%, #FFF5C0 100%)", padding: "18px 18px 16px", position: "relative", overflow: "hidden" }}>
               {/* Soft decorative circles */}
@@ -125,16 +125,16 @@ export default function HomeScreen({ onNavigate }: NavProps) {
 
               {/* Tag badge row */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
-                <div style={{ display: "inline-block", background: T.navy, color: T.yellow, fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px" }}>
+                <div style={{ display: "inline-block", background: T.navy, color: T.yellow, fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px" }}>
                   🇮🇳 India's First Collector Marketplace
                 </div>
               </div>
               <div
                 onClick={() => setInfoPage("about")}
-                style={{ fontSize: "10px", fontWeight: 700, color: T.navy, cursor: "pointer", fontFamily: "Nunito, sans-serif", opacity: 0.55, textDecoration: "underline", marginBottom: "10px" }}
+                style={{ fontSize: "10px", fontWeight: 700, color: T.navy, cursor: "pointer", fontFamily: "'Space Grotesk', sans-serif", opacity: 0.55, textDecoration: "underline", marginBottom: "10px" }}
               >About RareNook</div>
 
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy, lineHeight: 1.25, marginBottom: "7px" }}>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy, lineHeight: 1.25, marginBottom: "7px" }}>
                 Buy, Sell &amp; Trade<br/>Cards Safely in India
               </div>
               <div style={{ fontSize: "12px", color: "rgba(28,35,64,0.6)", lineHeight: 1.65, marginBottom: "14px" }}>
@@ -143,11 +143,11 @@ export default function HomeScreen({ onNavigate }: NavProps) {
               <div style={{ display: "flex", gap: "8px" }}>
                 <div
                   onClick={() => onNavigate("Marketplace")}
-                  style={{ flex: 1, padding: "10px 0", background: T.navy, borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", boxShadow: "2px 3px 0 rgba(28,35,64,0.2)" }}
+                  style={{ flex: 1, padding: "10px 0", background: T.navy, borderRadius: "12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", boxShadow: "2px 3px 0 rgba(28,35,64,0.2)" }}
                 >Browse Cards</div>
                 <div
                   onClick={() => setShowListing("sell")}
-                  style={{ flex: 1, padding: "10px 0", background: "rgba(255,255,255,0.55)", borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.navy, textAlign: "center" as const, cursor: "pointer", border: "1.5px solid rgba(28,35,64,0.18)" }}
+                  style={{ flex: 1, padding: "10px 0", background: "rgba(255,255,255,0.55)", borderRadius: "12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.navy, textAlign: "center" as const, cursor: "pointer", border: "1.5px solid rgba(28,35,64,0.18)" }}
                 >Sell a Card</div>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                 { val: "99%",    lbl: "Escrow success" },
               ].map((s, i) => (
                 <div key={`stat-${i}`} style={{ flex: 1, padding: "10px 0", textAlign: "center" as const, borderRight: i < 2 ? `1px solid ${T.border}` : "none" }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{s.val}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{s.val}</div>
                   <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "1px", fontWeight: 600 }}>{s.lbl}</div>
                 </div>
               ))}
@@ -179,7 +179,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
               >
                 <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: f.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", marginBottom: "8px" }}>{f.icon}</div>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink }}>{f.label}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink }}>{f.label}</div>
                 <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>{f.sub}</div>
               </div>
             ))}
@@ -187,11 +187,11 @@ export default function HomeScreen({ onNavigate }: NavProps) {
 
           {/* ── "What is RareNook?" onboarding card ── */}
           {showOnboarding && (
-            <div style={{ margin: "0 16px 14px", background: T.white, borderRadius: "18px", border: `1.5px solid ${T.border}`, boxShadow: T.s1, overflow: "hidden" }}>
+            <div style={{ margin: "0 clamp(12px, 4vw, 20px) 14px", background: T.white, borderRadius: "18px", border: `1.5px solid ${T.border}`, boxShadow: T.s1, overflow: "hidden" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 14px 10px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <div style={{ width: "28px", height: "28px", borderRadius: "8px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "14px" }}>🃏</div>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>New to RareNook?</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>New to RareNook?</div>
                 </div>
                 <div onClick={() => setShowOnboarding(false)} style={{ fontSize: "16px", color: T.inkGhost, cursor: "pointer", padding: "2px 4px", lineHeight: 1 }}>×</div>
               </div>
@@ -225,7 +225,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                   onClick={() => handleCategoryClick(cat)}
                   style={{
                     flexShrink: 0, padding: "6px 15px", borderRadius: "50px",
-                    fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700,
+                    fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700,
                     cursor: "pointer", whiteSpace: "nowrap" as const,
                     background: isOn ? T.navy : T.white,
                     color: isOn ? T.yellow : cat.live ? T.inkMid : T.inkSoft,
@@ -243,10 +243,10 @@ export default function HomeScreen({ onNavigate }: NavProps) {
           </div>
 
           {/* ── Wallet card ── */}
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "22px", boxShadow: T.s2, padding: "14px 16px", border: `1.5px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
+          <div style={{ margin: "0 clamp(12px, 4vw, 20px) 16px", background: T.white, borderRadius: "22px", boxShadow: T.s2, padding: "14px 16px", border: `1.5px solid ${T.border}`, position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", bottom: "-18px", right: "-10px", width: "80px", height: "80px", borderRadius: "50%", background: "#FFF5C0", border: "5px solid #FFE680" }} />
             <div style={{ fontSize: "11px", fontWeight: 600, color: T.inkSoft }}>Portfolio value</div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, lineHeight: 1.1, margin: "4px 0" }}>₹24,500</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, lineHeight: 1.1, margin: "4px 0" }}>₹24,500</div>
             <div style={{ fontSize: "12px", fontWeight: 700, color: T.mint }}>↑ 12% this week</div>
           </div>
 
@@ -263,13 +263,13 @@ export default function HomeScreen({ onNavigate }: NavProps) {
               >
                 {/* Card art */}
                 <div style={{ height: "92px", background: card.bg, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                  <span style={{ position: "absolute", top: "6px", left: "8px", fontSize: "8px", fontWeight: 700, color: "rgba(28,35,64,0.3)", fontFamily: "Nunito, sans-serif" }}>{card.no}</span>
+                  <span style={{ position: "absolute", top: "6px", left: "8px", fontSize: "8px", fontWeight: 700, color: "rgba(28,35,64,0.3)", fontFamily: "'Space Grotesk', sans-serif" }}>{card.no}</span>
                   <CardArt artKey={card.art as ArtKey} size={52} />
                 </div>
                 <div style={{ padding: "8px 9px 10px" }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.name}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink, lineHeight: 1.2 }}>{card.name}</div>
                   <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>{card.set} · {card.lang}</div>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "5px" }}>{card.price}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "5px" }}>{card.price}</div>
                 </div>
               </div>
             ))}
@@ -277,7 +277,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
 
           {/* ── Market Movers ── */}
           <SectionHeader title="Market Movers 📈" link="See all ›" onLink={() => onNavigate("Marketplace")} />
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "22px", boxShadow: T.s1, overflow: "hidden", border: `1.5px solid ${T.border}` }}>
+          <div style={{ margin: "0 clamp(12px, 4vw, 20px) 16px", background: T.white, borderRadius: "22px", boxShadow: T.s1, overflow: "hidden", border: `1.5px solid ${T.border}` }}>
             {MOVERS.map((m, i) => (
               <div
                 key={`mover-${m.id}`}
@@ -290,8 +290,8 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                   <CardArt artKey={m.art as ArtKey} size={32} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{m.name}</div>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "2px" }}>{m.price}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{m.name}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "2px" }}>{m.price}</div>
                 </div>
                 <div style={{ fontSize: "12px", fontWeight: 700, color: m.up ? T.mint : T.coral }}>{m.change}</div>
               </div>
@@ -300,7 +300,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
 
           {/* ── Verified Sales ── */}
           <SectionHeader title="Verified Sales ✅" link="See all ›" />
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "22px", boxShadow: T.s1, overflow: "hidden", border: `1.5px solid ${T.border}` }}>
+          <div style={{ margin: "0 clamp(12px, 4vw, 20px) 16px", background: T.white, borderRadius: "22px", boxShadow: T.s1, overflow: "hidden", border: `1.5px solid ${T.border}` }}>
             {SALES.map((s, i) => (
               <div key={`sale-${i}`} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 13px", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
                 <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: s.dot, flexShrink: 0 }} />
@@ -309,7 +309,7 @@ export default function HomeScreen({ onNavigate }: NavProps) {
                   <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "1px" }}>{s.by}</div>
                 </div>
                 <div style={{ textAlign: "right" as const }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>{s.price}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>{s.price}</div>
                   <div style={{ fontSize: "10px", fontWeight: 700, color: T.mint, marginTop: "2px" }}>Verified ✓</div>
                 </div>
               </div>
@@ -317,12 +317,12 @@ export default function HomeScreen({ onNavigate }: NavProps) {
           </div>
 
           {/* ── Footer links ── */}
-          <div style={{ margin: "0 16px 20px", display: "flex", justifyContent: "center", gap: "6px", flexWrap: "wrap" as const }}>
+          <div style={{ margin: "0 clamp(12px, 4vw, 20px) 20px", display: "flex", justifyContent: "center", gap: "6px", flexWrap: "wrap" as const }}>
             {(["about","help","contact"] as const).map(p => (
               <div
                 key={`footer-${p}`}
                 onClick={() => setInfoPage(p)}
-                style={{ padding: "6px 14px", background: T.white, borderRadius: "50px", border: `1.5px solid ${T.border}`, fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer", boxShadow: T.s1, textTransform: "capitalize" as const }}
+                style={{ padding: "6px 14px", background: T.white, borderRadius: "50px", border: `1.5px solid ${T.border}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer", boxShadow: T.s1, textTransform: "capitalize" as const }}
               >
                 {p === "about" ? "About RareNook" : p === "help" ? "Help & Support" : "Contact Us"}
               </div>

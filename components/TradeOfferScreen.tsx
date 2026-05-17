@@ -77,8 +77,8 @@ function SupportModal({ onClose }: { onClose: () => void }) {
         <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Collector Support</div>
-              <div style={{ background: T.yellow, color: T.navy, fontFamily: "Nunito, sans-serif", fontSize: "9px", fontWeight: 800, padding: "2px 8px", borderRadius: "50px", border: `1.5px solid ${T.navy}` }}>Coming Soon</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Collector Support</div>
+              <div style={{ background: T.yellow, color: T.navy, fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px", fontWeight: 800, padding: "2px 8px", borderRadius: "50px", border: `1.5px solid ${T.navy}` }}>Coming Soon</div>
             </div>
             <div style={{ fontSize: "11px", color: T.inkSoft }}>Help with trades, escrow &amp; disputes</div>
           </div>
@@ -90,7 +90,7 @@ function SupportModal({ onClose }: { onClose: () => void }) {
         {/* Preview card */}
         <div style={{ background: `linear-gradient(135deg, ${T.skySoft}, ${T.lavSoft})`, borderRadius: "18px", padding: "20px", marginBottom: "18px", textAlign: "center" as const, border: `1.5px solid ${T.border}` }}>
           <div style={{ fontSize: "42px", marginBottom: "10px" }}>🤖</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink, marginBottom: "6px" }}>AI Trade Assistant</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink, marginBottom: "6px" }}>AI Trade Assistant</div>
           <div style={{ fontSize: "12px", color: T.inkMid, lineHeight: 1.65 }}>Get instant help with trade valuations, escrow guidance, dispute resolution, and collector advice.</div>
         </div>
 
@@ -103,7 +103,7 @@ function SupportModal({ onClose }: { onClose: () => void }) {
           <div key={f.label} style={{ display: "flex", alignItems: "center", gap: "12px", padding: "10px 0", borderBottom: `1px solid rgba(28,35,64,0.06)` }}>
             <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}>{f.icon}</div>
             <div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
               <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "1px" }}>{f.sub}</div>
             </div>
           </div>
@@ -113,7 +113,7 @@ function SupportModal({ onClose }: { onClose: () => void }) {
           🚧 Live collector support and AI trade assistance will be available in the next update.
         </div>
 
-        <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
+        <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
           Got it
         </div>
       </div>
@@ -142,7 +142,7 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
     <OverlayShell onClose={onClose}>
       <div style={{ padding: "20px 22px 0" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Counter Offer</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Counter Offer</div>
           <div onClick={onClose} style={{ width: "28px", height: "28px", borderRadius: "50%", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke={T.inkMid} strokeWidth="1.6" strokeLinecap="round"/></svg>
           </div>
@@ -152,10 +152,10 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
           /* ── Sent confirmation ── */
           <div style={{ textAlign: "center" as const, padding: "20px 0 24px" }}>
             <div style={{ fontSize: "48px", marginBottom: "14px", animation: "rnPop 0.4s ease" }}>✅</div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>Counter Offer Sent!</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>Counter Offer Sent!</div>
             <div style={{ fontSize: "12px", color: T.inkSoft, lineHeight: 1.65, marginBottom: "6px" }}>You offered <strong style={{ color: T.ink }}>₹{amount}</strong> balance payment to CardKing_BLR.</div>
             <div style={{ fontSize: "11px", color: T.inkSoft, marginBottom: "24px" }}>They'll be notified and can accept, decline, or counter.</div>
-            <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
+            <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
               Back to Trade
             </div>
           </div>
@@ -164,7 +164,7 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
             {/* Context pill */}
             <div style={{ background: T.skySoft, borderRadius: "10px", padding: "9px 12px", marginBottom: "16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ fontSize: "11px", color: T.inkMid }}>Current gap</div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>₹21,100</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink }}>₹21,100</div>
             </div>
 
             {/* Quick presets */}
@@ -174,7 +174,7 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
                 {COUNTER_PRESETS.map(p => {
                   const isOn = selected === p;
                   return (
-                    <div key={`preset-${p}`} onClick={() => pickPreset(p)} style={{ padding: "7px 14px", borderRadius: "50px", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, cursor: "pointer", background: isOn ? T.navy : T.white, color: isOn ? T.yellow : T.inkMid, border: `1.5px solid ${isOn ? T.navy : T.border}`, transition: "all 0.15s" }}>{p}</div>
+                    <div key={`preset-${p}`} onClick={() => pickPreset(p)} style={{ padding: "7px 14px", borderRadius: "50px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, cursor: "pointer", background: isOn ? T.navy : T.white, color: isOn ? T.yellow : T.inkMid, border: `1.5px solid ${isOn ? T.navy : T.border}`, transition: "all 0.15s" }}>{p}</div>
                   );
                 })}
               </div>
@@ -184,12 +184,12 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
             <div style={{ marginBottom: "18px" }}>
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.06em", marginBottom: "9px" }}>Custom Amount</div>
               <div style={{ display: "flex", alignItems: "center", background: T.white, border: `2px solid ${T.navy}`, borderRadius: "14px", padding: "11px 14px", gap: "6px" }}>
-                <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.inkMid }}>₹</span>
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.inkMid }}>₹</span>
                 <input
                   value={amount}
                   onChange={e => { setAmount(e.target.value); setSelected(null); }}
                   placeholder="Enter amount"
-                  style={{ flex: 1, border: "none", outline: "none", fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, background: "transparent" }}
+                  style={{ flex: 1, border: "none", outline: "none", fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, background: "transparent" }}
                 />
               </div>
               <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "6px", paddingLeft: "4px" }}>Market avg balance: ₹21,100 · Min accepted: ₹18,000</div>
@@ -200,17 +200,17 @@ function NegotiateModal({ onClose }: { onClose: () => void }) {
               <div style={{ fontSize: "11px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.06em", marginBottom: "9px" }}>Add a Note (optional)</div>
               <textarea
                 placeholder="e.g. I can include shipping insurance..."
-                style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "Nunito Sans, sans-serif", fontSize: "12px", color: T.inkMid, outline: "none", background: T.skySoft, resize: "none" as const, height: "60px" }}
+                style={{ width: "100%", padding: "10px 12px", border: `1.5px solid ${T.border}`, borderRadius: "12px", fontFamily: "'Inter', sans-serif", fontSize: "12px", color: T.inkMid, outline: "none", background: T.skySoft, resize: "none" as const, height: "60px" }}
               />
             </div>
 
-            <div onClick={handleSend} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px", transition: "transform 0.15s" }}
+            <div onClick={handleSend} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px", transition: "transform 0.15s" }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
             >
               Send Counter Offer
             </div>
-            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", marginBottom: "4px" }}>
+            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", marginBottom: "4px" }}>
               Cancel
             </div>
           </>
@@ -229,7 +229,7 @@ function PaymentModal({ onClose }: { onClose: () => void }) {
     <OverlayShell onClose={onClose}>
       <div style={{ padding: "20px 22px 0" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Pay Balance</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink }}>Pay Balance</div>
           <div onClick={onClose} style={{ width: "28px", height: "28px", borderRadius: "50%", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
             <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 1L9 9M9 1L1 9" stroke={T.inkMid} strokeWidth="1.6" strokeLinecap="round"/></svg>
           </div>
@@ -239,16 +239,16 @@ function PaymentModal({ onClose }: { onClose: () => void }) {
         {confirmed ? (
           <div style={{ textAlign: "center" as const, padding: "12px 0 24px" }}>
             <div style={{ fontSize: "44px", marginBottom: "14px", animation: "rnPop 0.4s ease" }}>✅</div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>Payment Initiated</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>Payment Initiated</div>
             <div style={{ fontSize: "12px", color: T.inkSoft, lineHeight: 1.65, marginBottom: "22px" }}>₹21,100 via {PAYMENT_METHODS.find(m => m.id === selected)?.label}. Funds will be held in RareNook Escrow until the card is verified.</div>
-            <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Done</div>
+            <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Done</div>
           </div>
         ) : (
           <>
             {/* Amount display */}
             <div style={{ background: `linear-gradient(135deg, #DDD8FA, #E4F4FB)`, borderRadius: "16px", padding: "16px", marginBottom: "16px", textAlign: "center" as const }}>
               <div style={{ fontSize: "10px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.06em", marginBottom: "6px" }}>Balance Due</div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "28px", fontWeight: 900, color: T.navy }}>₹21,100</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "28px", fontWeight: 900, color: T.navy }}>₹21,100</div>
               <div style={{ fontSize: "10px", color: T.inkMid, marginTop: "4px" }}>Held securely in RareNook Escrow</div>
             </div>
 
@@ -265,7 +265,7 @@ function PaymentModal({ onClose }: { onClose: () => void }) {
                   >
                     <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: isOn ? T.white : T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "18px", flexShrink: 0 }}>{m.icon}</div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{m.label}</div>
+                      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{m.label}</div>
                       <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "1px" }}>{m.sub}</div>
                     </div>
                     <div style={{ width: "18px", height: "18px", borderRadius: "50%", border: `2px solid ${isOn ? T.navy : T.inkGhost}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -278,7 +278,7 @@ function PaymentModal({ onClose }: { onClose: () => void }) {
 
             {/* Escrow explainer */}
             <div style={{ background: T.mintSoft, borderRadius: "12px", padding: "11px 13px", marginBottom: "14px", borderLeft: `3px solid ${T.mint}` }}>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", marginBottom: "4px" }}>🔒 How RareNook Escrow Works</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", marginBottom: "4px" }}>🔒 How RareNook Escrow Works</div>
               <div style={{ fontSize: "11px", color: T.inkMid, lineHeight: 1.65 }}>Your payment is held safely until the card passes our authenticity and condition check. If anything fails, you get a full refund.</div>
             </div>
 
@@ -287,10 +287,10 @@ function PaymentModal({ onClose }: { onClose: () => void }) {
               ⚙️ Payment processing is simulated for demo purposes
             </div>
 
-            <div onClick={() => setConfirmed(true)} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
+            <div onClick={() => setConfirmed(true)} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "8px" }}>
               Confirm Payment · ₹21,100
             </div>
-            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", marginBottom: "4px" }}>
+            <div onClick={onClose} style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", marginBottom: "4px" }}>
               Cancel
             </div>
           </>
@@ -312,7 +312,7 @@ function LoadingModal({ onDone }: { onDone: () => void }) {
       <style>{`@keyframes rnSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}`}</style>
       <div style={{ background: T.white, borderRadius: "24px", padding: "36px 40px", textAlign: "center" as const, boxShadow: T.s3, animation: "rnFade 0.2s ease" }}>
         <div style={{ width: "48px", height: "48px", borderRadius: "50%", border: `3px solid ${T.skySoft}`, borderTop: `3px solid ${T.navy}`, margin: "0 auto 18px", animation: "rnSpin 0.8s linear infinite" }} />
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink, marginBottom: "6px" }}>Starting Escrow...</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink, marginBottom: "6px" }}>Starting Escrow...</div>
         <div style={{ fontSize: "11px", color: T.inkSoft }}>Securing your trade with RareNook</div>
       </div>
     </div>
@@ -333,7 +333,7 @@ function SuccessModal({ onTrack, onHub }: { onTrack: () => void; onHub: () => vo
         {/* Trophy */}
         <div style={{ textAlign: "center" as const, marginBottom: "20px" }}>
           <div style={{ fontSize: "52px", marginBottom: "12px", animation: "rnPop 0.4s ease 0.1s both" }}>🎉</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, marginBottom: "4px" }}>Trade Started!</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink, marginBottom: "4px" }}>Trade Started!</div>
           <div style={{ fontSize: "12px", color: T.inkSoft }}>Charizard ex SAR ⇄ Luffy Gear 5 R</div>
         </div>
 
@@ -342,7 +342,7 @@ function SuccessModal({ onTrack, onHub }: { onTrack: () => void; onHub: () => vo
           {steps.map((s, i) => (
             <div key={`success-step-${i}`} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "8px 0", borderBottom: i < steps.length - 1 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
               <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: s.done ? T.mintSoft : T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", flexShrink: 0, border: `1.5px solid ${s.done ? T.mint : T.border}` }}>{s.icon}</div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: s.done ? 700 : 500, color: s.done ? T.ink : T.inkGhost }}>{s.label}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: s.done ? 700 : 500, color: s.done ? T.ink : T.inkGhost }}>{s.label}</div>
               {s.done && <div style={{ marginLeft: "auto", fontSize: "10px", fontWeight: 700, color: T.mint }}>✓</div>}
             </div>
           ))}
@@ -351,14 +351,14 @@ function SuccessModal({ onTrack, onHub }: { onTrack: () => void; onHub: () => vo
         {/* Trade ID */}
         <div style={{ background: T.skySoft, borderRadius: "10px", padding: "9px 12px", marginBottom: "18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontSize: "10px", color: T.inkSoft, fontWeight: 600 }}>Trade ID</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>#RN-2024-7841</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>#RN-2024-7841</div>
         </div>
 
         {/* CTAs */}
-        <div onClick={onTrack} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "9px" }}>
+        <div onClick={onTrack} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "9px" }}>
           📦 Track Trade
         </div>
-        <div onClick={onHub} style={{ width: "100%", padding: "12px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>
+        <div onClick={onHub} style={{ width: "100%", padding: "12px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>
           ← Return to Trade Hub
         </div>
       </div>
@@ -415,7 +415,7 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
             <svg width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M7 1L1 6.5L7 12" stroke={T.lavender} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             Trade Hub
           </div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>Trade Offer</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink }}>Trade Offer</div>
           <div
             onClick={() => setModal("negotiate")}
             style={{ fontSize: "12px", fontWeight: 700, color: T.lavender, background: T.lavSoft, padding: "5px 11px", borderRadius: "8px", cursor: "pointer", border: `1.5px solid ${T.lavender}`, transition: "all 0.15s" }}
@@ -426,16 +426,16 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
           </div>
         </div>
 
-        <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
 
           {/* ── Status pill ── */}
           {!declined && (
-            <div style={{ margin: "4px 16px 13px", background: T.lavSoft, borderRadius: "12px", padding: "9px 13px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.lavender }}>
+            <div style={{ margin: "4px 16px 13px", background: T.lavSoft, borderRadius: "12px", padding: "9px 13px", textAlign: "center" as const, fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.lavender }}>
               ⏳ Awaiting confirmation from CardKing_BLR
             </div>
           )}
           {declined && (
-            <div style={{ margin: "4px 16px 13px", background: "#FFF0ED", borderRadius: "12px", padding: "9px 13px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.coral }}>
+            <div style={{ margin: "4px 16px 13px", background: "#FFF0ED", borderRadius: "12px", padding: "9px 13px", textAlign: "center" as const, fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.coral }}>
               ❌ Trade declined. You can make a new offer anytime.
             </div>
           )}
@@ -446,26 +446,26 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
               <div style={{ fontSize: "10px", fontWeight: 700, color: T.inkSoft, padding: "9px 11px 6px", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>You Offer</div>
               <div style={{ height: "88px", background: "#FFF0ED", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "44px" }}>🃏</div>
               <div style={{ padding: "9px 11px 11px" }}>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink }}>Charizard ex SAR</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink }}>Charizard ex SAR</div>
                 <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>SV151 · PSA 10 · EN</div>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.coral, marginTop: "5px" }}>~₹24,500</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.coral, marginTop: "5px" }}>~₹24,500</div>
               </div>
             </div>
-            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#DDD8FA", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.navy, border: `2px solid ${T.navy}`, flexShrink: 0 }}>VS</div>
+            <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#DDD8FA", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.navy, border: `2px solid ${T.navy}`, flexShrink: 0 }}>VS</div>
             <div style={{ flex: 1, background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
               <div style={{ fontSize: "10px", fontWeight: 700, color: T.inkSoft, padding: "9px 11px 6px", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>You Receive</div>
               <div style={{ height: "88px", background: "#E4F4FB", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "44px" }}>🃏</div>
               <div style={{ padding: "9px 11px 11px" }}>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink }}>Luffy Gear 5 R</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 900, color: T.ink }}>Luffy Gear 5 R</div>
                 <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>OP06 · NM · JP</div>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: "#2A7FAA", marginTop: "5px" }}>~₹3,400</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: "#2A7FAA", marginTop: "5px" }}>~₹3,400</div>
               </div>
             </div>
           </div>
 
           {/* ── Value gap ── */}
           <div style={{ margin: "0 16px 12px", background: "#FFF0ED", borderRadius: "12px", padding: "11px 13px", borderLeft: `3px solid ${T.coral}` }}>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.coral }}>⚠️ Value Gap Detected</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.coral }}>⚠️ Value Gap Detected</div>
             <div style={{ fontSize: "11px", color: T.inkMid, marginTop: "4px", lineHeight: 1.55 }}>
               Your card is worth ~₹21,100 more. The other party must pay this balance to complete the trade.
             </div>
@@ -473,15 +473,15 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
 
           {/* ── Balance payment card ── */}
           <div style={{ margin: "0 16px 12px", background: "#DDD8FA", borderRadius: "18px", padding: "13px 14px" }}>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy }}>💸 Balance Payment Required</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy }}>💸 Balance Payment Required</div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "8px" }}>
               <div>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "22px", fontWeight: 900, color: T.navy }}>₹21,100</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "22px", fontWeight: 900, color: T.navy }}>₹21,100</div>
                 <div style={{ fontSize: "10px", color: T.navy, opacity: 0.65, marginTop: "3px" }}>payable by CardKing_BLR</div>
               </div>
               <div
                 onClick={() => setModal("payment")}
-                style={{ background: T.white, borderRadius: "10px", padding: "8px 14px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.navy, border: `1.5px solid ${T.navy}`, cursor: "pointer", transition: "all 0.15s", boxShadow: `1px 1px 0 ${T.navy}` }}
+                style={{ background: T.white, borderRadius: "10px", padding: "8px 14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.navy, border: `1.5px solid ${T.navy}`, cursor: "pointer", transition: "all 0.15s", boxShadow: `1px 1px 0 ${T.navy}` }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = T.navy; (e.currentTarget as HTMLElement).style.color = T.yellow; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = T.white; (e.currentTarget as HTMLElement).style.color = T.navy; }}
               >
@@ -492,12 +492,12 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
 
           {/* ── Escrow timeline ── */}
           <div style={{ margin: "0 16px 12px", background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, padding: "14px" }}>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "12px" }}>🔒 RareNook Escrow Flow</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "12px" }}>🔒 RareNook Escrow Flow</div>
             <div style={{ display: "flex", alignItems: "flex-start" }}>
               {ESCROW_STEPS.map((step, i) => (
                 <React.Fragment key={`escrow-${step.num}`}>
                   <div style={{ flex: 1, textAlign: "center" as const }}>
-                    <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: step.bg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, margin: "0 auto 5px", boxShadow: T.s1 }}>{step.num}</div>
+                    <div style={{ width: "30px", height: "30px", borderRadius: "50%", background: step.bg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink, margin: "0 auto 5px", boxShadow: T.s1 }}>{step.num}</div>
                     <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, lineHeight: 1.35 }}>
                       {step.label.map((l, j) => <div key={`lbl-${j}`}>{l}</div>)}
                     </div>
@@ -510,7 +510,7 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
 
           {/* ── Trade chat ── */}
           <div style={{ margin: "0 16px 12px", background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, padding: "13px" }}>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "10px" }}>💬 Trade Chat</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "10px" }}>💬 Trade Chat</div>
             <div style={{ maxHeight: "160px", overflowY: "auto", marginBottom: "10px", display: "flex", flexDirection: "column" as const, gap: "8px" }}>
               {messages.map((msg, i) => {
                 const isMe = msg.from === "me";
@@ -525,7 +525,7 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
               <div ref={chatEndRef} />
             </div>
             <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-              <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendMessage()} placeholder="Type a message..." style={{ flex: 1, padding: "8px 12px", border: `1.5px solid ${T.border}`, borderRadius: "10px", fontFamily: "Nunito Sans, sans-serif", fontSize: "12px", color: T.inkMid, outline: "none", background: T.skySoft }} />
+              <input value={chatInput} onChange={e => setChatInput(e.target.value)} onKeyDown={e => e.key === "Enter" && sendMessage()} placeholder="Type a message..." style={{ flex: 1, padding: "8px 12px", border: `1.5px solid ${T.border}`, borderRadius: "10px", fontFamily: "'Inter', sans-serif", fontSize: "12px", color: T.inkMid, outline: "none", background: T.skySoft }} />
               <div onClick={sendMessage} style={{ width: "32px", height: "32px", background: T.navy, borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7L13 1L7 13V7H1Z" fill={T.yellow} stroke={T.yellow} strokeWidth="0.5" strokeLinejoin="round"/></svg>
               </div>
@@ -537,19 +537,19 @@ export default function TradeOfferScreen({ onNavigate }: NavProps) {
             <div style={{ display: "flex", gap: "10px", padding: "0 16px", marginBottom: "14px" }}>
               <div
                 onClick={handleAccept}
-                style={{ flex: 1.4, padding: "13px 0", background: T.navy, borderRadius: "16px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s", boxShadow: `2px 3px 0 rgba(28,35,64,0.25)` }}
+                style={{ flex: 1.4, padding: "13px 0", background: T.navy, borderRadius: "16px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", transition: "transform 0.15s, box-shadow 0.15s", boxShadow: `2px 3px 0 rgba(28,35,64,0.25)` }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = `2px 5px 0 rgba(28,35,64,0.2)`; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = `2px 3px 0 rgba(28,35,64,0.25)`; }}
               >Accept &amp; Start Escrow</div>
               <div
                 onClick={() => setDeclined(true)}
-                style={{ flex: 1, padding: "13px 0", background: "#FFF0ED", borderRadius: "16px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.coral, textAlign: "center" as const, cursor: "pointer" }}
+                style={{ flex: 1, padding: "13px 0", background: "#FFF0ED", borderRadius: "16px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.coral, textAlign: "center" as const, cursor: "pointer" }}
               >Decline</div>
             </div>
           ) : (
             <div style={{ display: "flex", gap: "10px", padding: "0 16px", marginBottom: "14px" }}>
-              <div onClick={() => setModal("negotiate")} style={{ flex: 1, padding: "13px 0", background: T.navy, borderRadius: "16px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Make Counter Offer</div>
-              <div onClick={() => onNavigate("TradeHub")} style={{ flex: 1, padding: "13px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "16px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>Back</div>
+              <div onClick={() => setModal("negotiate")} style={{ flex: 1, padding: "13px 0", background: T.navy, borderRadius: "16px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Make Counter Offer</div>
+              <div onClick={() => onNavigate("TradeHub")} style={{ flex: 1, padding: "13px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "16px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}>Back</div>
             </div>
           )}
 

@@ -464,7 +464,7 @@ export default function DesktopLayout({ screen, onNavigate }: {
   const [modal,       setModal]       = useState<{ title: string; message: string } | null>(null);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#F0F4F8", fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: T.sky, fontFamily: "'Inter', sans-serif" }}>
       {showNotifs  && <NotificationsModal onClose={() => setShowNotifs(false)} />}
       {infoPage    && <InfoModal page={infoPage} onClose={() => setInfoPage(null)} onSwitch={p => setInfoPage(p)} />}
       {showListing && <AddListingModal mode={showListing} onClose={() => setShowListing(null)} />}

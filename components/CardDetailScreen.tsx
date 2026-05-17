@@ -25,7 +25,7 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
           </svg>
           Back
         </div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink }}>Card Detail</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 800, color: T.ink }}>Card Detail</div>
         <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" style={{ cursor: "pointer" }}>
             <path d="M9 2L11 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H7L9 2Z" stroke="#FFD740" strokeWidth="1.7" strokeLinejoin="round"/>
@@ -38,7 +38,7 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
         </div>
       </div>
 
-      <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
+      <div style={{ overflowY: "visible", overflowX: "hidden" }}>
 
         {/* Hero image */}
         <div style={{ height: "220px", background: `linear-gradient(150deg, ${T.skySoft} 0%, #9DD0EA 100%)`, display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
@@ -70,16 +70,16 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
 
         {/* Card info — improved hierarchy */}
         <div style={{ padding: "0 16px 13px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{DEMO.name}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{DEMO.name}</div>
           <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px", lineHeight: 1.6 }}>
             {DEMO.series} · {DEMO.set} · {DEMO.lang} · {DEMO.year}
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "8px", marginBottom: "4px" }}>
-            <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>{DEMO.cond}</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: "#16854E", background: T.mintSoft, padding: "4px 11px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>{DEMO.cond}</span>
             <span style={{ fontSize: "12px", fontWeight: 700, color: T.mint }}>↑ 12%</span>
           </div>
           <div style={{ fontSize: "9px", color: T.inkSoft, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase" as const, marginBottom: "3px" }}>Market Value</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>{DEMO.price}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "26px", fontWeight: 900, color: T.ink, marginBottom: "14px" }}>{DEMO.price}</div>
         </div>
 
         {/* Market Intelligence */}
@@ -91,7 +91,7 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
           ].map((stat) => (
             <div key={stat.label} style={{ background: T.white, borderRadius: "12px", boxShadow: T.s1, padding: "10px 8px", textAlign: "center" as const, border: `1.5px solid ${T.border}` }}>
               <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>{stat.label}</div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: stat.color, marginTop: "4px" }}>{stat.value}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: stat.color, marginTop: "4px" }}>{stat.value}</div>
               <div style={{ fontSize: "9px", color: T.inkSoft, marginTop: "2px" }}>{stat.sub}</div>
             </div>
           ))}
@@ -104,23 +104,23 @@ export default function CardDetailScreen({ onNavigate }: NavProps) {
 
         {/* Seller */}
         <div style={{ margin: "0 16px 13px", background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px" }}>
-          <div style={{ width: "42px", height: "42px", borderRadius: "50%", background: "#FFF5C0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `2px solid ${T.border}` }}>R</div>
+          <div style={{ width: "42px", height: "42px", borderRadius: "50%", background: "#FFF5C0", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `2px solid ${T.border}` }}>R</div>
           <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 800, color: T.ink }}>Rahul_TCG</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 800, color: T.ink }}>Rahul_TCG</div>
             <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>Mumbai · ⭐ 4.9 · 143 sales · 99% authentic</div>
           </div>
-          <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 Trusted</div>
+          <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 Trusted</div>
         </div>
 
         {/* CTAs */}
         <div style={{ display: "flex", gap: "10px", padding: "0 16px", marginBottom: "12px" }}>
           <div
-            style={{ flex: 1.4, padding: "13px 0", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy, textAlign: "center" as const, cursor: "pointer", boxShadow: `2px 3px 0 ${T.navy}`, transition: "transform 0.15s" }}
+            style={{ flex: 1.4, padding: "13px 0", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy, textAlign: "center" as const, cursor: "pointer", boxShadow: `2px 3px 0 ${T.navy}`, transition: "transform 0.15s" }}
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
           >Buy Now</div>
           <div
-            style={{ flex: 1, padding: "13px 0", background: "transparent", border: `2px solid ${T.borderMid}`, borderRadius: "18px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", transition: "border-color 0.15s" }}
+            style={{ flex: 1, padding: "13px 0", background: "transparent", border: `2px solid ${T.borderMid}`, borderRadius: "18px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer", transition: "border-color 0.15s" }}
             onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = T.navy}
             onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = T.borderMid}
           >⇄ Make Offer</div>

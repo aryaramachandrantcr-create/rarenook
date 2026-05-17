@@ -141,25 +141,25 @@ function MatchDemoOverlay({ match, onClose }: {
     <Overlay onClose={onClose}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-        <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: match.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, border: `1.5px solid ${T.border}` }}>{match.avatarLetter}</div>
+        <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: match.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, border: `1.5px solid ${T.border}` }}>{match.avatarLetter}</div>
         <div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{match.user}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{match.user}</div>
           <div style={{ fontSize: "11px", color: T.inkSoft }}>{match.city} · ⭐ {match.rating} · {match.trades} trades</div>
         </div>
-        <div style={{ marginLeft: "auto", background: T.mintSoft, color: "#16854E", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 9px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 {match.score}</div>
+        <div style={{ marginLeft: "auto", background: T.mintSoft, color: "#16854E", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 9px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 {match.score}</div>
       </div>
 
       {/* Cards */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
         <div style={{ flex: 1, background: match.offering.bg, borderRadius: "14px", padding: "12px 10px", textAlign: "center" as const }}>
           <div style={{ fontSize: "32px", marginBottom: "6px" }}>🃏</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{match.offering.name}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{match.offering.name}</div>
           <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px" }}>{match.offering.val}</div>
         </div>
         <div style={{ fontSize: "18px", color: T.inkGhost }}>⇄</div>
         <div style={{ flex: 1, background: match.requesting.bg, borderRadius: "14px", padding: "12px 10px", textAlign: "center" as const }}>
           <div style={{ fontSize: "32px", marginBottom: "6px" }}>🃏</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{match.requesting.name}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{match.requesting.name}</div>
           <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px" }}>{match.requesting.val}</div>
         </div>
       </div>
@@ -167,16 +167,16 @@ function MatchDemoOverlay({ match, onClose }: {
       {/* Value gap */}
       <div style={{ background: T.mintSoft, borderRadius: "12px", padding: "10px 13px", marginBottom: "16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ fontSize: "11px", color: T.inkSoft, fontWeight: 600 }}>{match.gapLabel}</div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.mint }}>{match.gap}</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.mint }}>{match.gap}</div>
       </div>
 
       {/* Demo notice */}
       <div style={{ background: T.skySoft, borderRadius: "12px", padding: "12px 14px", marginBottom: "18px", borderLeft: `3px solid ${T.navy}` }}>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy, marginBottom: "4px" }}>🚧 Trade flow demo not available yet</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy, marginBottom: "4px" }}>🚧 Trade flow demo not available yet</div>
         <div style={{ fontSize: "11px", color: T.inkMid, lineHeight: 1.6 }}>Full trade negotiation for this match is coming soon. Only the first suggested match has a live demo right now.</div>
       </div>
 
-      <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
+      <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
         Got it
       </div>
     </Overlay>
@@ -190,13 +190,13 @@ function ListingOverlay({ listing, onClose }: {
 }) {
   return (
     <Overlay onClose={onClose}>
-      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "16px" }}>Trade Listing</div>
+      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "16px" }}>Trade Listing</div>
 
       {/* Seller */}
       <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "11px 13px", background: T.skySoft, borderRadius: "14px", marginBottom: "14px" }}>
-        <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: listing.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, border: `1.5px solid ${T.border}`, flexShrink: 0 }}>{listing.letter}</div>
+        <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: listing.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, border: `1.5px solid ${T.border}`, flexShrink: 0 }}>{listing.letter}</div>
         <div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{listing.user}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{listing.user}</div>
           <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "1px" }}>{listing.city}</div>
         </div>
       </div>
@@ -206,28 +206,28 @@ function ListingOverlay({ listing, onClose }: {
         <div style={{ background: T.white, borderRadius: "14px", padding: "12px", border: `1.5px solid ${T.border}`, textAlign: "center" as const }}>
           <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.06em", marginBottom: "8px" }}>Offering</div>
           <div style={{ fontSize: "28px", marginBottom: "6px" }}>🃏</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{listing.offering}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{listing.offering}</div>
         </div>
         <div style={{ background: T.white, borderRadius: "14px", padding: "12px", border: `1.5px solid ${T.border}`, textAlign: "center" as const }}>
           <div style={{ fontSize: "9px", fontWeight: 700, color: T.inkSoft, textTransform: "uppercase" as const, letterSpacing: "0.06em", marginBottom: "8px" }}>Wants</div>
           <div style={{ fontSize: "28px", marginBottom: "6px" }}>🔍</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{listing.requesting}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{listing.requesting}</div>
         </div>
       </div>
 
       {/* Value row */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 13px", background: T.mintSoft, borderRadius: "12px", marginBottom: "14px" }}>
         <div style={{ fontSize: "12px", color: T.inkSoft, fontWeight: 600 }}>Estimated Value</div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.mint }}>{listing.val}</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.mint }}>{listing.val}</div>
       </div>
 
       {/* Coming soon notice */}
       <div style={{ background: T.skySoft, borderRadius: "12px", padding: "11px 14px", marginBottom: "18px", borderLeft: `3px solid ${T.navy}` }}>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy, marginBottom: "3px" }}>🚧 Trading flow coming soon</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.navy, marginBottom: "3px" }}>🚧 Trading flow coming soon</div>
         <div style={{ fontSize: "11px", color: T.inkMid, lineHeight: 1.6 }}>You'll be able to respond to this listing, send a counter offer, and start escrow — all from this screen.</div>
       </div>
 
-      <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
+      <div onClick={onClose} style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>
         Close
       </div>
     </Overlay>
@@ -243,8 +243,8 @@ function TradeStatusOverlay({ trade, onClose }: {
     <Overlay onClose={onClose}>
       {/* Title row */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, flex: 1, paddingRight: "12px", lineHeight: 1.3 }}>{trade.title}</div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "8px", background: trade.statusBg, color: trade.statusColor, flexShrink: 0 }}>{trade.status}</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "15px", fontWeight: 900, color: T.ink, flex: 1, paddingRight: "12px", lineHeight: 1.3 }}>{trade.title}</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "4px 10px", borderRadius: "8px", background: trade.statusBg, color: trade.statusColor, flexShrink: 0 }}>{trade.status}</div>
       </div>
 
       {/* Trade partner */}
@@ -255,7 +255,7 @@ function TradeStatusOverlay({ trade, onClose }: {
 
       {/* Escrow timeline */}
       <div style={{ marginBottom: "16px" }}>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "12px" }}>🔒 Escrow Progress</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink, marginBottom: "12px" }}>🔒 Escrow Progress</div>
         {trade.escrowSteps.map((step, i) => (
           <div key={`step-${trade.id}-${i}`} style={{ display: "flex", alignItems: "flex-start", gap: "12px", marginBottom: i < trade.escrowSteps.length - 1 ? "0" : "0" }}>
             {/* Line + dot */}
@@ -267,7 +267,7 @@ function TradeStatusOverlay({ trade, onClose }: {
                 background: step.done ? T.mint : step.active ? T.yellow : T.skySoft,
                 border: `2px solid ${step.done ? T.mint : step.active ? T.navy : T.inkGhost}`,
                 color: step.done ? T.white : step.active ? T.navy : T.inkGhost,
-                fontWeight: 800, fontFamily: "Nunito, sans-serif",
+                fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif",
               }}>
                 {step.done ? "✓" : i + 1}
               </div>
@@ -277,7 +277,7 @@ function TradeStatusOverlay({ trade, onClose }: {
             </div>
             {/* Label */}
             <div style={{ paddingTop: "2px", paddingBottom: "18px" }}>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: step.active ? 800 : 600, color: step.active ? T.ink : step.done ? T.inkMid : T.inkGhost }}>{step.label}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: step.active ? 800 : 600, color: step.active ? T.ink : step.done ? T.inkMid : T.inkGhost }}>{step.label}</div>
               {step.time && <div style={{ fontSize: "10px", color: step.active ? T.lavender : T.inkGhost, marginTop: "2px" }}>{step.time}</div>}
             </div>
           </div>
@@ -294,13 +294,13 @@ function TradeStatusOverlay({ trade, onClose }: {
       <div style={{ display: "flex", gap: "9px" }}>
         <div
           onClick={onClose}
-          style={{ flex: 1, padding: "12px 0", background: T.navy, borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}
+          style={{ flex: 1, padding: "12px 0", background: T.navy, borderRadius: "12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}
         >
           💬 Chat Support
         </div>
         <div
           onClick={onClose}
-          style={{ flex: 1, padding: "12px 0", background: "transparent", border: `1.5px solid ${T.borderMid}`, borderRadius: "12px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}
+          style={{ flex: 1, padding: "12px 0", background: "transparent", border: `1.5px solid ${T.borderMid}`, borderRadius: "12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}
         >
           Close
         </div>
@@ -319,19 +319,19 @@ function MatchCard({ match, onView, onOffer }: {
     <div style={{ margin: "0 16px 12px", background: T.white, borderRadius: "22px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", gap: "9px", padding: "12px 14px 10px" }}>
-        <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: match.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{match.avatarLetter}</div>
+        <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: match.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{match.avatarLetter}</div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{match.user}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{match.user}</div>
           <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "1px" }}>{match.city} · ⭐ {match.rating} · {match.trades} trades</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
           {match.live && (
             <div style={{ display: "flex", alignItems: "center", gap: "3px", background: "#EDFBF4", padding: "2px 8px", borderRadius: "50px", border: `1px solid ${T.mint}` }}>
               <div style={{ width: "5px", height: "5px", borderRadius: "50%", background: T.mint }} />
-              <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "9px", fontWeight: 800, color: T.mint }}>Live</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px", fontWeight: 800, color: T.mint }}>Live</span>
             </div>
           )}
-          <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 9px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 {match.score}</div>
+          <div style={{ background: T.mintSoft, color: "#16854E", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "3px 9px", borderRadius: "50px", border: `1.5px solid ${T.mint}` }}>🛡 {match.score}</div>
         </div>
       </div>
 
@@ -339,13 +339,13 @@ function MatchCard({ match, onView, onOffer }: {
       <div style={{ display: "flex", alignItems: "center", padding: "0 14px 12px", gap: "8px" }}>
         <div style={{ flex: 1, background: match.offering.bg, borderRadius: "12px", padding: "10px 8px", textAlign: "center" as const }}>
           <div style={{ fontSize: "28px", marginBottom: "4px" }}>🃏</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink, lineHeight: 1.2 }}>{match.offering.name}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink, lineHeight: 1.2 }}>{match.offering.name}</div>
           <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "3px" }}>{match.offering.val}</div>
         </div>
         <div style={{ fontSize: "16px", color: T.inkGhost, flexShrink: 0 }}>⇄</div>
         <div style={{ flex: 1, background: match.requesting.bg, borderRadius: "12px", padding: "10px 8px", textAlign: "center" as const }}>
           <div style={{ fontSize: "28px", marginBottom: "4px" }}>🃏</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink, lineHeight: 1.2 }}>{match.requesting.name}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink, lineHeight: 1.2 }}>{match.requesting.name}</div>
           <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "3px" }}>{match.requesting.val}</div>
         </div>
       </div>
@@ -354,11 +354,11 @@ function MatchCard({ match, onView, onOffer }: {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 14px 12px", borderTop: `1px solid ${T.border}` }}>
         <div>
           <div style={{ fontSize: "10px", color: T.inkSoft, fontWeight: 600 }}>{match.gapLabel}</div>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.mint, marginTop: "1px" }}>{match.gap}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.mint, marginTop: "1px" }}>{match.gap}</div>
         </div>
         <div style={{ display: "flex", gap: "7px" }}>
-          <div onClick={onView} style={{ padding: "7px 14px", background: T.navy, borderRadius: "9px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 800, color: T.yellow, cursor: "pointer" }}>View</div>
-          <div onClick={onOffer} style={{ padding: "7px 14px", background: "transparent", border: `1.5px solid ${T.borderMid}`, borderRadius: "9px", fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer" }}>Offer</div>
+          <div onClick={onView} style={{ padding: "7px 14px", background: T.navy, borderRadius: "9px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.yellow, cursor: "pointer" }}>View</div>
+          <div onClick={onOffer} style={{ padding: "7px 14px", background: "transparent", border: `1.5px solid ${T.borderMid}`, borderRadius: "9px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer" }}>Offer</div>
         </div>
       </div>
     </div>
@@ -423,8 +423,8 @@ function ComingSoonTabView({ tabId, onDismiss }: { tabId: TabId; onDismiss: () =
         marginBottom: "14px",
       }}>
         <div style={{ fontSize: "40px", marginBottom: "12px" }}>{cfg.icon}</div>
-        <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>{cfg.title}</div>
-        <div style={{ display: "inline-block", background: T.yellow, color: T.navy, fontFamily: "Nunito, sans-serif", fontSize: "9px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px", border: `1.5px solid ${T.navy}`, marginBottom: "12px" }}>Coming Soon</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>{cfg.title}</div>
+        <div style={{ display: "inline-block", background: T.yellow, color: T.navy, fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px", fontWeight: 800, padding: "3px 10px", borderRadius: "50px", border: `1.5px solid ${T.navy}`, marginBottom: "12px" }}>Coming Soon</div>
         <div style={{ fontSize: "12px", color: T.inkMid, lineHeight: 1.7 }}>{cfg.message}</div>
       </div>
 
@@ -434,7 +434,7 @@ function ComingSoonTabView({ tabId, onDismiss }: { tabId: TabId; onDismiss: () =
           <div key={`feat-${i}`} style={{ display: "flex", alignItems: "center", gap: "12px", padding: "12px 14px", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
             <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: T.skySoft, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "17px", flexShrink: 0 }}>{f.icon}</div>
             <div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: T.ink }}>{f.label}</div>
               <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "1px" }}>{f.sub}</div>
             </div>
           </div>
@@ -444,7 +444,7 @@ function ComingSoonTabView({ tabId, onDismiss }: { tabId: TabId; onDismiss: () =
       {/* Notify me CTA */}
       <div
         onClick={onDismiss}
-        style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "9px", boxShadow: `2px 3px 0 rgba(28,35,64,0.18)`, transition: "transform 0.15s" }}
+        style={{ width: "100%", padding: "13px 0", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer", marginBottom: "9px", boxShadow: `2px 3px 0 rgba(28,35,64,0.18)`, transition: "transform 0.15s" }}
         onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)"}
         onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
       >
@@ -452,7 +452,7 @@ function ComingSoonTabView({ tabId, onDismiss }: { tabId: TabId; onDismiss: () =
       </div>
       <div
         onClick={onDismiss}
-        style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}
+        style={{ width: "100%", padding: "11px 0", background: "transparent", border: `1.5px solid ${T.border}`, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkMid, textAlign: "center" as const, cursor: "pointer" }}
       >
         Back to Open Trades
       </div>
@@ -504,11 +504,11 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
         <Overlay onClose={() => setNotifyModal(null)}>
           <div style={{ padding: "4px 4px 0", textAlign: "center" as const }}>
             <div style={{ fontSize: "40px", marginBottom: "12px" }}>🔔</div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>You're on the list!</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "8px" }}>You're on the list!</div>
             <div style={{ fontSize: "12px", color: T.inkSoft, lineHeight: 1.7, marginBottom: "22px" }}>
               We'll notify you as soon as <strong style={{ color: T.ink }}>{notifyModal}</strong> goes live. You'll be among the first to access it.
             </div>
-            <div onClick={() => { setNotifyModal(null); setActiveTab("Open Trades"); }} style={{ width: "100%", padding: "13px", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Got it</div>
+            <div onClick={() => { setNotifyModal(null); setActiveTab("Open Trades"); }} style={{ width: "100%", padding: "13px", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Got it</div>
           </div>
         </Overlay>
       )}
@@ -516,9 +516,9 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
       {/* See-all info overlay */}
       {seeAllModal && (
         <Overlay onClose={() => setSeeAllModal(null)}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "10px" }}>{seeAllModal}</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 900, color: T.ink, marginBottom: "10px" }}>{seeAllModal}</div>
           <div style={{ fontSize: "13px", color: T.inkSoft, lineHeight: 1.65, marginBottom: "20px" }}>Full browsing view is coming soon. You'll be able to search, sort, and filter all listings across India.</div>
-          <div onClick={() => setSeeAllModal(null)} style={{ width: "100%", padding: "13px", background: T.navy, borderRadius: "14px", fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Got it</div>
+          <div onClick={() => setSeeAllModal(null)} style={{ width: "100%", padding: "13px", background: T.navy, borderRadius: "14px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.yellow, textAlign: "center" as const, cursor: "pointer" }}>Got it</div>
         </Overlay>
       )}
 
@@ -528,7 +528,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
         {/* Top Nav */}
         <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "7px", fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.navy }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "7px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.navy }}>
               <LogoBall /> Trade Hub
             </div>
             <div style={{ fontSize: "9px", fontWeight: 600, color: T.inkSoft, letterSpacing: "0.06em", textTransform: "uppercase" as const, marginTop: "2px" }}>
@@ -537,11 +537,11 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           </div>
           <div
             onClick={() => setShowListTrade(true)}
-            style={{ background: T.yellow, border: `2px solid ${T.navy}`, borderRadius: "9px", padding: "6px 12px", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.navy, boxShadow: `2px 2px 0 ${T.navy}`, cursor: "pointer" }}
+            style={{ background: T.yellow, border: `2px solid ${T.navy}`, borderRadius: "9px", padding: "6px 12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.navy, boxShadow: `2px 2px 0 ${T.navy}`, cursor: "pointer" }}
           >+ List</div>
         </div>
 
-        <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
           <SearchBar placeholder="Search cards, collectors, or trades..." />
 
           {/* Tabs */}
@@ -557,7 +557,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
                     flexShrink: 0,
                     padding: "6px 14px",
                     borderRadius: "50px",
-                    fontFamily: "Nunito, sans-serif",
+                    fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: "12px", fontWeight: 700,
                     cursor: "pointer", whiteSpace: "nowrap" as const,
                     background: isOn ? T.navy : T.white,
@@ -597,7 +597,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           {/* Match banner */}
           <div style={{ margin: "0 16px 14px", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, boxShadow: `3px 3px 0 ${T.navy}`, padding: "13px 15px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
-              <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy }}>🎯 3 Wishlist Matches!</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy }}>🎯 3 Wishlist Matches!</div>
               <div style={{ fontSize: "11px", color: T.navy, opacity: 0.7, marginTop: "3px", fontWeight: 600 }}>Collectors want your Charizard ex SAR</div>
             </div>
             <div style={{ fontSize: "32px" }}>🃏</div>
@@ -633,14 +633,14 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = T.skySoft}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "transparent"}
               >
-                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: listing.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0 }}>{listing.letter}</div>
+                <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: listing.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0 }}>{listing.letter}</div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{listing.user} · <span style={{ color: T.inkSoft, fontWeight: 400 }}>{listing.city}</span></div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{listing.user} · <span style={{ color: T.inkSoft, fontWeight: 400 }}>{listing.city}</span></div>
                   <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>{listing.offering} ⇄ {listing.requesting}</div>
                 </div>
                 <div style={{ textAlign: "right" as const }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink }}>{listing.val}</div>
-                  <div style={{ marginTop: "4px", background: T.navy, borderRadius: "7px", padding: "2px 9px", fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, color: T.yellow }}>View</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 900, color: T.ink }}>{listing.val}</div>
+                  <div style={{ marginTop: "4px", background: T.navy, borderRadius: "7px", padding: "2px 9px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, color: T.yellow }}>View</div>
                 </div>
               </div>
             ))}
@@ -661,10 +661,10 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
               >
                 <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: trade.dot, flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{trade.title}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{trade.title}</div>
                   <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>with {trade.with} · {trade.note}</div>
                 </div>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "9px", fontWeight: 800, padding: "3px 9px", borderRadius: "7px", background: trade.statusBg, color: trade.statusColor }}>{trade.status}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "9px", fontWeight: 800, padding: "3px 9px", borderRadius: "7px", background: trade.statusBg, color: trade.statusColor }}>{trade.status}</div>
               </div>
             ))}
           </div>
@@ -679,10 +679,10 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
                 key={`trending-${t.rank}`}
                 style={{ display: "flex", alignItems: "center", gap: "10px", padding: "10px 13px", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}
               >
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.inkGhost, width: "18px", flexShrink: 0 }}>{t.rank}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.inkGhost, width: "18px", flexShrink: 0 }}>{t.rank}</div>
                 <div style={{ width: "32px", height: "32px", borderRadius: "9px", background: t.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", flexShrink: 0 }}>🃏</div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{t.name}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{t.name}</div>
                   <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "1px" }}>{t.trades}</div>
                 </div>
                 <div style={{ fontSize: "11px", fontWeight: 800, color: t.up ? T.mint : T.coral }}>{t.change}</div>

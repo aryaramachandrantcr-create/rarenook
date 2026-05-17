@@ -59,7 +59,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
 
         {/* Top Nav */}
         <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
-          <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy }}>My Profile</div>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "19px", fontWeight: 900, color: T.navy }}>My Profile</div>
           <div
             onClick={() => setInfoPage("about")}
             style={{ width: "34px", height: "34px", borderRadius: "50%", background: T.white, border: `1.5px solid ${T.border}`, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: T.s1 }}
@@ -71,14 +71,14 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
           </div>
         </div>
 
-        <div style={{ maxHeight: "636px", overflowY: "auto", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
 
           {/* Profile Hero */}
           <div style={{ background: `linear-gradient(160deg, ${T.skySoft}, #FFF5C0)`, padding: "20px 16px 18px", textAlign: "center" as const, borderBottom: `1px solid ${T.border}` }}>
-            <div style={{ width: "70px", height: "70px", borderRadius: "50%", background: T.yellow, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "28px", fontWeight: 900, color: T.navy, margin: "0 auto 10px", border: `3px solid ${T.navy}`, boxShadow: `3px 3px 0 ${T.navy}` }}>A</div>
-            <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink }}>Arya_Collector</div>
+            <div style={{ width: "70px", height: "70px", borderRadius: "50%", background: T.yellow, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "28px", fontWeight: 900, color: T.navy, margin: "0 auto 10px", border: `3px solid ${T.navy}`, boxShadow: `3px 3px 0 ${T.navy}` }}>A</div>
+            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.ink }}>Arya_Collector</div>
             <div style={{ fontSize: "11px", color: T.inkSoft, marginTop: "3px" }}>Thrissur, Kerala · Member since 2023</div>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "5px", background: T.mintSoft, borderRadius: "50px", padding: "5px 14px", marginTop: "12px", fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 800, color: "#16854E", border: `1.5px solid ${T.mint}` }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "5px", background: T.mintSoft, borderRadius: "50px", padding: "5px 14px", marginTop: "12px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 800, color: "#16854E", border: `1.5px solid ${T.mint}` }}>
               🛡 Trust Score: 98 / 100
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", padding: "14px 16px" }}>
             {METRICS.map(m => (
               <div key={m.label} style={{ background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, padding: "13px", textAlign: "center" as const }}>
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "22px", fontWeight: 900, color: m.color }}>{m.val}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "22px", fontWeight: 900, color: m.color }}>{m.val}</div>
                 <div style={{ fontSize: "10px", color: T.inkSoft, fontWeight: 600, marginTop: "4px", textTransform: "uppercase" as const, letterSpacing: "0.05em" }}>{m.label}</div>
               </div>
             ))}
@@ -104,7 +104,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "scale(1.03)"}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "scale(1)"}
               >
-                <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{s.val}</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "20px", fontWeight: 900, color: T.ink }}>{s.val}</div>
                 <div style={{ fontSize: "9px", color: T.inkMid, fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.04em", marginTop: "3px" }}>{s.lbl}</div>
               </div>
             ))}
@@ -120,7 +120,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                   onClick={() => setActiveTab(tab)}
                   style={{
                     flex: 1, padding: "10px 0", textAlign: "center" as const,
-                    fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: isOn ? 800 : 500,
+                    fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: isOn ? 800 : 500,
                     cursor: "pointer",
                     background: isOn ? T.navy : "transparent",
                     color: isOn ? T.yellow : T.inkSoft,
@@ -145,20 +145,20 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                 >
                   <div style={{ width: "44px", height: "44px", borderRadius: "11px", background: card.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "24px", flexShrink: 0 }}>🃏</div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{card.name}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{card.name}</div>
                     <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "4px" }}>
-                      <span style={{ fontFamily: "Nunito, sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 7px", borderRadius: "50px", border: "1px solid rgba(0,0,0,0.08)", ...condStyle[card.condType] }}>{card.cond}</span>
+                      <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "10px", fontWeight: 800, padding: "2px 7px", borderRadius: "50px", border: "1px solid rgba(0,0,0,0.08)", ...condStyle[card.condType] }}>{card.cond}</span>
                     </div>
                   </div>
                   <div style={{ textAlign: "right" as const }}>
-                    <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{card.price}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.ink }}>{card.price}</div>
                     <div style={{ fontSize: "9px", color: T.mint, fontWeight: 700, marginTop: "3px" }}>Active ●</div>
                   </div>
                 </div>
               ))}
               <div
                 onClick={() => setShowListing("sell")}
-                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px", transition: "border-color 0.15s, color 0.15s" }}
+                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px", transition: "border-color 0.15s, color 0.15s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = T.navy; (e.currentTarget as HTMLElement).style.color = T.navy; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = T.inkGhost; (e.currentTarget as HTMLElement).style.color = T.inkSoft; }}
               >+ Add New Listing</div>
@@ -172,24 +172,24 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
                 <div key={w.name} style={{ display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px", background: T.white, borderRadius: "16px", marginBottom: "8px", boxShadow: T.s1, border: `1.5px solid ${T.border}` }}>
                   <div style={{ width: "44px", height: "44px", borderRadius: "11px", background: w.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🃏</div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{w.name}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 800, color: T.ink }}>{w.name}</div>
                     <div style={{ fontSize: "10px", color: T.inkSoft, marginTop: "2px" }}>{w.set}</div>
                   </div>
                   <div style={{ textAlign: "right" as const }}>
                     <div style={{ fontSize: "10px", color: T.inkSoft }}>Max budget</div>
-                    <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "2px" }}>{w.maxPrice}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, marginTop: "2px" }}>{w.maxPrice}</div>
                   </div>
                 </div>
               ))}
               <div
                 onClick={() => setModal({ title: "Add to Wishlist", message: "Add a card you're looking for to your wishlist. RareNook will notify you when a match is found!" })}
-                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px" }}
+                style={{ width: "100%", padding: "12px", background: "transparent", border: `2px dashed ${T.inkGhost}`, borderRadius: "16px", textAlign: "center" as const, fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 700, color: T.inkSoft, cursor: "pointer", marginBottom: "16px" }}
               >+ Add to Wishlist</div>
 
               {/* Footer links */}
               <div style={{ display: "flex", justifyContent: "center", gap: "6px", flexWrap: "wrap" as const, paddingBottom: "4px" }}>
                 {(["about","help","contact"] as const).map(p => (
-                  <div key={`prof-footer-${p}`} onClick={() => setInfoPage(p)} style={{ padding: "5px 13px", background: T.white, borderRadius: "50px", border: `1.5px solid ${T.border}`, fontFamily: "Nunito, sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer", boxShadow: T.s1, textTransform: "capitalize" as const }}>
+                  <div key={`prof-footer-${p}`} onClick={() => setInfoPage(p)} style={{ padding: "5px 13px", background: T.white, borderRadius: "50px", border: `1.5px solid ${T.border}`, fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 700, color: T.inkMid, cursor: "pointer", boxShadow: T.s1, textTransform: "capitalize" as const }}>
                     {p === "about" ? "About" : p === "help" ? "Help" : "Contact"}
                   </div>
                 ))}
@@ -220,9 +220,9 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
               {REVIEWS.map(r => (
                 <div key={r.user} style={{ background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, padding: "13px", marginBottom: "10px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "9px", marginBottom: "8px" }}>
-                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: r.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Nunito, sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{r.letter}</div>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: r.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{r.letter}</div>
                     <div>
-                      <div style={{ fontFamily: "Nunito, sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{r.user}</div>
+                      <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "12px", fontWeight: 700, color: T.ink }}>{r.user}</div>
                       <div style={{ fontSize: "11px", color: "#D4A000", marginTop: "1px" }}>{"★".repeat(r.stars)}</div>
                     </div>
                   </div>
