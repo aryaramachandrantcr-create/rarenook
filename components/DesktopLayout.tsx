@@ -357,23 +357,15 @@ function DesktopMarketplace({ onNavigate }: { onNavigate: (s: Screen) => void })
 }
 
 // ─── DESKTOP SCREEN WRAPPER ───────────────────────────────
-// Centres mobile screens in a constrained column on desktop
+// Full-width container — CSS hides mobile shell constraints
 function DesktopScreenWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      padding: "32px 24px 60px",
+    <div className="rn-desktop-wrap" style={{
+      width: "100%",
       minHeight: "calc(100vh - 64px)",
       background: T.sky,
     }}>
-      <div style={{
-        width: "100%",
-        maxWidth: "440px",
-        background: T.sky,
-      }}>
-        {children}
-      </div>
+      {children}
     </div>
   );
 }

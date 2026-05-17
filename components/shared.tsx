@@ -567,21 +567,18 @@ export function AddListingModal({ mode, onClose }: { mode: "sell" | "trade"; onC
 // ─── STATUS BAR — hidden on real mobile, shown in desktop preview ─
 export function StatusBar() {
   return (
-    <>
-      <style>{`.rn-statusbar { display: none; }`}</style>
-      <div className="rn-statusbar" style={{ background: T.sky, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 22px 2px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>
-        <span>9:41</span>
-        <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-          <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
-            <rect x="0" y="4" width="3" height="7" rx="1" fill={T.ink} opacity="0.4"/>
-            <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" fill={T.ink} opacity="0.6"/>
-            <rect x="9" y="0" width="3" height="11" rx="1" fill={T.ink}/>
-            <rect x="13.5" y="2" width="3" height="7" rx="1" fill={T.ink} opacity="0.3"/>
-          </svg>
-          🔋
-        </span>
-      </div>
-    </>
+    <div className="rn-status-bar" style={{ background: T.sky, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "13px 22px 2px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "11px", fontWeight: 800, color: T.ink }}>
+      <span>9:41</span>
+      <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+        <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
+          <rect x="0" y="4" width="3" height="7" rx="1" fill={T.ink} opacity="0.4"/>
+          <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" fill={T.ink} opacity="0.6"/>
+          <rect x="9" y="0" width="3" height="11" rx="1" fill={T.ink}/>
+          <rect x="13.5" y="2" width="3" height="7" rx="1" fill={T.ink} opacity="0.3"/>
+        </svg>
+        🔋
+      </span>
+    </div>
   );
 }
 

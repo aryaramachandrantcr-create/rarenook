@@ -316,7 +316,7 @@ function MatchCard({ match, onView, onOffer }: {
   onOffer: () => void;
 }) {
   return (
-    <div style={{ margin: "0 16px 12px", background: T.white, borderRadius: "22px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+    <div style={{ margin: "0 clamp(16px, 5vw, 48px) 12px", background: T.white, borderRadius: "22px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", gap: "9px", padding: "12px 14px 10px" }}>
         <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: match.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{match.avatarLetter}</div>
@@ -412,7 +412,7 @@ const TAB_CONFIG: Record<TabId, {
 function ComingSoonTabView({ tabId, onDismiss }: { tabId: TabId; onDismiss: () => void }) {
   const cfg = TAB_CONFIG[tabId];
   return (
-    <div style={{ margin: "0 16px 16px" }}>
+    <div style={{ margin: "0 clamp(16px, 5vw, 48px) 16px" }}>
       {/* Hero card */}
       <div style={{
         background: `linear-gradient(135deg, ${T.skySoft}, ${T.lavSoft})`,
@@ -525,8 +525,8 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
       <PhoneShell>
         <StatusBar />
 
-        {/* Top Nav */}
-        <div style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
+        {/* Top Nav - hidden on desktop, desktop nav handles it */}
+        <div className="rn-mobile-topnav" style={{ background: T.sky, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "4px 18px 12px" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "7px", fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 900, color: T.navy }}>
               <LogoBall /> Trade Hub
@@ -541,11 +541,11 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           >+ List</div>
         </div>
 
-        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden", maxWidth: "900px", margin: "0 auto" }}>
           <SearchBar placeholder="Search cards, collectors, or trades..." />
 
           {/* Tabs */}
-          <div style={{ display: "flex", gap: "7px", padding: "0 16px 14px", overflowX: "auto" }}>
+          <div style={{ display: "flex", gap: "7px", padding: "0 clamp(16px, 5vw, 48px) 14px", overflowX: "auto" }}>
             {tabs.map(tab => {
               const isOn = tab === activeTab;
               const isLive = TAB_CONFIG[tab].live;
@@ -595,7 +595,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           {/* ── OPEN TRADES content ── */}
           {activeTab === "Open Trades" && (<>
           {/* Match banner */}
-          <div style={{ margin: "0 16px 14px", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, boxShadow: `3px 3px 0 ${T.navy}`, padding: "13px 15px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ margin: "0 clamp(16px, 5vw, 48px) 14px", background: T.yellow, borderRadius: "18px", border: `2px solid ${T.navy}`, boxShadow: `3px 3px 0 ${T.navy}`, padding: "13px 15px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div>
               <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", fontWeight: 900, color: T.navy }}>🎯 3 Wishlist Matches!</div>
               <div style={{ fontSize: "11px", color: T.navy, opacity: 0.7, marginTop: "3px", fontWeight: 600 }}>Collectors want your Charizard ex SAR</div>
@@ -624,7 +624,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
             link="24 open ›"
             onLink={() => setSeeAllModal("All Active Listings")}
           />
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+          <div style={{ margin: "0 clamp(16px, 5vw, 48px) 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
             {LISTINGS.map((listing, i) => (
               <div
                 key={`listing-${listing.id}`}
@@ -650,7 +650,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           {/* ── MY TRADES content ── */}
           {activeTab === "My Trades" && (<>
           <SectionHeader title="⇄ My Active Trades" link="Manage ›" onLink={() => setSeeAllModal("Manage Trades")} />
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+          <div style={{ margin: "0 clamp(16px, 5vw, 48px) 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
             {ACTIVE_TRADES.map((trade, i) => (
               <div
                 key={`trade-${trade.id}`}
@@ -673,7 +673,7 @@ export default function TradeHubScreen({ onNavigate }: NavProps) {
           {/* ── Trending — shown on live tabs only ── */}
           {TAB_CONFIG[activeTab].live && (<>
           <SectionHeader title="🔥 Trending Trades" link="This week ›" />
-          <div style={{ margin: "0 16px 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+          <div style={{ margin: "0 clamp(16px, 5vw, 48px) 16px", background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
             {TRENDING.map((t, i) => (
               <div
                 key={`trending-${t.rank}`}

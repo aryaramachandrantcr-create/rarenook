@@ -73,7 +73,7 @@ function PostCard({ post, onLike, onComment }: {
   onComment: () => void;
 }) {
   return (
-    <div style={{ margin: "0 16px 12px", background: T.white, borderRadius: "22px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
+    <div style={{ margin: "0 clamp(16px, 5vw, 48px) 12px", background: T.white, borderRadius: "22px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden" }}>
       {/* Header */}
       <div style={{ display: "flex", alignItems: "center", gap: "9px", padding: "12px 13px 9px" }}>
         <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: post.avatarBg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Space Grotesk', sans-serif", fontSize: "13px", fontWeight: 900, color: T.ink, flexShrink: 0, border: `1.5px solid ${T.border}` }}>{post.letter}</div>
@@ -148,9 +148,9 @@ export default function CommunityScreen({ onNavigate }: NavProps) {
           >+ Post</div>
         </div>
 
-        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden", maxWidth: "900px", margin: "0 auto" }}>
           {/* Tabs */}
-          <div style={{ display: "flex", gap: "7px", padding: "0 16px 14px", overflowX: "auto" }}>
+          <div style={{ display: "flex", gap: "7px", padding: "0 clamp(16px, 5vw, 48px) 14px", overflowX: "auto" }}>
             {TABS.map(tab => {
               const isOn = tab === activeTab;
               return (

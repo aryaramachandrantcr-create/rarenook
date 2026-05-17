@@ -71,7 +71,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
           </div>
         </div>
 
-        <div style={{ overflowY: "visible", overflowX: "hidden" }}>
+        <div style={{ overflowY: "visible", overflowX: "hidden", maxWidth: "900px", margin: "0 auto" }}>
 
           {/* Profile Hero */}
           <div style={{ background: `linear-gradient(160deg, ${T.skySoft}, #FFF5C0)`, padding: "20px 16px 18px", textAlign: "center" as const, borderBottom: `1px solid ${T.border}` }}>
@@ -94,7 +94,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
           </div>
 
           {/* Quick stats row */}
-          <div style={{ display: "flex", gap: "9px", padding: "0 16px 14px" }}>
+          <div style={{ display: "flex", gap: "9px", padding: "0 clamp(16px, 5vw, 48px) 14px" }}>
             {[
               { val: "12", lbl: "Listings",  color: T.yellow },
               { val: "28", lbl: "Wishlist",  color: T.skySoft },
@@ -111,7 +111,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
           </div>
 
           {/* Tab bar */}
-          <div style={{ display: "flex", gap: "0", padding: "0 16px", marginBottom: "14px", background: T.white, marginLeft: "16px", marginRight: "16px", borderRadius: "14px", border: `1.5px solid ${T.border}`, overflow: "hidden", boxShadow: T.s1 }}>
+          <div style={{ display: "flex", gap: "0", padding: "0 clamp(16px, 5vw, 48px)", marginBottom: "14px", background: T.white, marginLeft: "16px", marginRight: "16px", borderRadius: "14px", border: `1.5px solid ${T.border}`, overflow: "hidden", boxShadow: T.s1 }}>
             {PROFILE_TABS.map((tab, i) => {
               const isOn = tab === activeTab;
               return (
@@ -134,7 +134,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
 
           {/* LISTINGS TAB */}
           {activeTab === "Listings" && (
-            <div style={{ padding: "0 16px" }}>
+            <div style={{ padding: "0 clamp(16px, 5vw, 48px)" }}>
               {LISTINGS.map((card, i) => (
                 <div
                   key={card.id}
@@ -167,7 +167,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
 
           {/* WISHLIST TAB */}
           {activeTab === "Wishlist" && (
-            <div style={{ padding: "0 16px" }}>
+            <div style={{ padding: "0 clamp(16px, 5vw, 48px)" }}>
               {WISHLIST.map(w => (
                 <div key={w.name} style={{ display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px", background: T.white, borderRadius: "16px", marginBottom: "8px", boxShadow: T.s1, border: `1.5px solid ${T.border}` }}>
                   <div style={{ width: "44px", height: "44px", borderRadius: "11px", background: w.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "22px", flexShrink: 0 }}>🃏</div>
@@ -199,7 +199,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
 
           {/* ACTIVITY TAB */}
           {activeTab === "Activity" && (
-            <div style={{ padding: "0 16px" }}>
+            <div style={{ padding: "0 clamp(16px, 5vw, 48px)" }}>
               <div style={{ background: T.white, borderRadius: "20px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, overflow: "hidden", marginBottom: "16px" }}>
                 {ACTIVITY.map((a, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: "11px", padding: "11px 13px", borderTop: i > 0 ? `1px solid rgba(28,35,64,0.06)` : "none" }}>
@@ -216,7 +216,7 @@ export default function ProfileScreen({ onNavigate }: NavProps) {
 
           {/* REVIEWS TAB */}
           {activeTab === "Reviews" && (
-            <div style={{ padding: "0 16px" }}>
+            <div style={{ padding: "0 clamp(16px, 5vw, 48px)" }}>
               {REVIEWS.map(r => (
                 <div key={r.user} style={{ background: T.white, borderRadius: "18px", boxShadow: T.s1, border: `1.5px solid ${T.border}`, padding: "13px", marginBottom: "10px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "9px", marginBottom: "8px" }}>

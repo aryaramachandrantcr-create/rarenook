@@ -22,24 +22,28 @@ body {
   width: 100%;
 }
 
-/* â”€â”€ DESKTOP: hide mobile bottom nav, show desktop layout â”€â”€ */
+/* â”€â”€ DESKTOP â”€â”€ */
 @media (min-width: 768px) {
-  .rn-bottom-nav {
+  /* Hide mobile-only elements */
+  .rn-bottom-nav,
+  .rn-bottom-spacer,
+  .rn-status-bar {
     display: none !important;
   }
-  .rn-bottom-spacer {
-    display: none !important;
+
+  /* Mobile screens inside desktop wrapper go full width */
+  .rn-desktop-wrap .rn-mobile-screen {
+    max-width: 100% !important;
+    width: 100% !important;
   }
-  /* Mobile screens centred in a max-width container on desktop */
-  .rn-mobile-screen {
-    max-width: 480px;
-    margin: 0 auto;
-    min-height: 100vh;
-    position: relative;
+
+  /* Mobile top nav hidden inside desktop â€” desktop nav handles this */
+  .rn-desktop-wrap .rn-mobile-topnav {
+    display: none !important;
   }
 }
 
-/* â”€â”€ MOBILE: full bleed â”€â”€ */
+/* â”€â”€ MOBILE â”€â”€ */
 @media (max-width: 767px) {
   .rn-mobile-screen {
     width: 100%;
